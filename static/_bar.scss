@@ -1,0 +1,74 @@
+/* CODING LANGUAGE PROFICIENCY BAR CSS */
+@import "mixins";
+
+$bar-height: 2rem;
+$green: #58b957;
+$yellow: #f2ae43;
+$bar-red: #db524b;
+
+@mixin round-border { border-radius: 1rem; }
+
+.lang-wrapper {
+	@include auto_margin;
+	@include round-border;
+
+	position: relative; 
+
+	width: 60%;
+	height: $bar-height;
+
+	padding: 0;
+	margin-bottom: 1rem;
+
+	overflow: hidden;
+
+	color: $gray;
+	background: rgba($light, 0.5);
+
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+
+	&:active {
+		height: auto; /* smooth transition doesn't work for auto height... */
+	}
+}
+
+.lang-text {
+	padding: 1rem 0;
+	text-align: left;
+
+	color: $black;
+}
+
+.bar-outer {
+	@include round-border;
+
+/*	background: rgba($gray, 0.25); */
+
+	height: $bar-height;
+	width: 100%;
+
+	position: relative;
+}
+
+@mixin bar-inner($col) {
+	@include round-border;
+
+	height: $bar-height;
+	color: $white;
+	background: $col;
+
+	position: absolute;
+}
+
+.bar-inner-green { @include bar-inner(rgba($green, 0.5)); }
+.bar-inner-yellow { @include bar-inner(rgba($yellow, 0.5)); }
+.bar-inner-red { @include bar-inner(rgba($bar-red, 0.5)); }
+
+span.lang-name {
+	padding-top: 0.375rem;
+
+	display: inline-block;
+	position: relative;
+}

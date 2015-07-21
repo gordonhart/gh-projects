@@ -1,0 +1,45 @@
+<!-- attempt at background image animation-->
+{% macro slide(fromLoc, toLoc) %}
+
+{% set startLoc = -((fromLoc*50) + 50) %}
+{% set endLoc = -((toLoc*50) + 50) %}
+<style>
+#bg {
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+	padding: 0;
+
+	position: relative;
+	overflow: hidden;
+}
+
+#bg:before {
+	content: "";
+	z-index: -1;
+	background: url("/static/images/cubefield_v8.jpg");
+	background-size: cover;
+
+	position: absolute;
+	width: calc(100% + 250px);
+	height: 100%;
+
+	animation: slide-background 2s;
+	-webkit-animation: slide-background 2s;
+
+	animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+
+	left: 0px; 
+	transform: translate({{ endLoc }}px);
+	top: 0;
+}
+
+@keyframes slide-background { /* smoother using translate than left */
+	from { transform: translateX({{ startLoc }}px); }
+	to { transform: translateX({{ endLoc }}px); }
+}
+</style>
+
+{% endmacro %}

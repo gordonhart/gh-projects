@@ -1,0 +1,54 @@
+/* COLORS */
+
+$white: #FFFFFF;
+$light: #F8F8F8;
+$gray: #DDDDDD;
+$red: #720000;
+$black: #222222;
+
+/* FONTS */
+
+@font-face {
+	font-family: "Rad-Light";
+	src: url(fonts/Rajdhani-Light.ttf);
+}
+
+@font-face {
+	font-family: "Rad-Bold";
+	src: url(fonts/Rajdhani-Bold.ttf);
+}
+
+@font-face {
+	font-family: "Rad-Medium";
+	src: url(fonts/Rajdhani-Medium.ttf);
+}
+
+@font-face {
+	font-family: "Rad-Regular";
+	src: url(fonts/Rajdhani-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Rad-SemiBold";
+	src: url(fonts/Rajdhani-SemiBold.ttf);
+}
+
+@font-face {
+	font-family: "Mono";
+	src: url(fonts/AnonymousPro-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Mono-Ital";
+	src: url(fonts/AnonymousPro-Italic.ttf);
+}
+
+@font-face {
+	font-family: "Mono-Bold";
+	src: url(fonts/AnonymousPro-Bold.ttf);
+}
+
+@font-face {
+	font-family: "Mono-Bold-Ital";
+	src: url(fonts/AnonymousPro-BoldItalic.ttf);
+}

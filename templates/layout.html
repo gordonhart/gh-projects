@@ -1,0 +1,60 @@
+{% import 'bg.html' as bg %}
+{% import 'slider.html' as slider %}
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+
+    <title>gh-projects</title>
+
+    <link rel="stylesheet" href="/static/site.css">
+
+    <script type="text/javascript" src="/static/js/mobile_redirect.js"></script>
+
+    {# pass the location attributes on to the background slider#}
+    {{ bg.slide(locs.from, locs.to) }}
+
+    <!-- CONTENT SLIDER UNUSED FOR NOW
+    {# content slider #}
+    {{ slider.slide(locs.from, locs.to) }}
+    -->
+
+  </head>
+    
+  <body>
+    <div id="bg"> <!-- div for animated background -->
+    
+      <main>
+        <!-- NOTE: the following is rendered from a template so indentation may be wonky -->
+        {% block content %}{% endblock %}
+      </main>
+
+    </div>
+
+    <!-- NAV BAR -->
+    <div id="sticky-element">
+      <footer>
+
+        <nav>
+          <a class="nav-title" href="/">gh-projects</a>
+
+          <a class="nav-tab {% if active == "about" %}current{% endif %}" href="/about">About</a>
+          <a class="nav-tab {% if active == "projects" %}current{% endif %}" href="/projects">Projects</a>
+          <a class="nav-tab {% if active == "portfolio" %}current{% endif %}" href="/portfolio">Portfolio</a>
+          <a class="nav-tab {% if active == "contact" %}current{% endif %}" href="/contact">Contact</a>
+          <a class="nav-tab" href="http://gordonhart.co">Blog</a>
+        </nav>
+
+      </footer>
+    </div>
+    <!-- ENDNAV -->
+
+  </body>
+
+</html>

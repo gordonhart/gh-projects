@@ -1,0 +1,42 @@
+<!-- attempt at background image animation-->
+{% macro slide(fromLoc, toLoc) %}
+
+{% set startLoc = ((toLoc-fromLoc)*25) %}
+{% set startLoc = 100 %}
+
+<style>
+#slider {
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+	padding: 0;
+
+	position: relative;
+
+	animation: slide-content 2s;
+	-webkit-animation: slide-content 2s;
+
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes slide-content { /* smoother using translate than left */
+
+	{% if fromLoc > toLoc %} {# coming from the right side #}
+	from { transform: translateX(-{{ startLoc }}%); }
+	to { transform: translateX(0px); }
+	
+	{% elif fromLoc < toLoc %} {# coming from left side #}
+	from { transform: translateX({{ startLoc }}%); }
+	to { transform: translateX(0px); }
+
+	{% else %} {# same place #}
+	from { opacity: 0; }
+	to { opacity: 1; }
+
+	{% endif %}
+}
+</style>
+
+{% endmacro %}

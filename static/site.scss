@@ -1,0 +1,264 @@
+@import "colors-fonts";
+@import "mixins";
+@import "nav"; /* bottom nav button stylings */
+@import "bar"; /* programming language proficiency bar stylings */
+
+/* NOTE: CSS for animated background is contained in bg.html */
+
+/* STANDARD HTML ELEMENTS */
+
+html, body {
+	font-family: "Rad-Regular";
+	text-align: center;
+
+	margin:0 auto;
+	padding:0;
+
+	width:100%;
+	height:100%;
+
+	font-size: 16px;
+}
+
+main {
+	width: 100%;
+	min-width: 800px; 
+	
+	height: calc(100% - 70px); /* this works !!!!! */
+
+	margin: 0;
+	padding: 0;
+
+	text-align: center;	
+}
+
+h1 {
+	font-family: "Rad-SemiBold";
+	padding: 1rem 0;
+	margin: 0 auto;
+	width: 66.6%;
+	font-size: 3rem;
+	text-align: center;
+}
+
+h2 {
+	@extend h1;
+
+	padding: 1rem 2rem 0 2rem;
+	border-bottom: solid 1px $gray; 
+}
+
+h3 {
+	font-family: "Rad-SemiBold";
+	padding: 1rem 0;
+	margin: 0;
+	font-size: 2rem;
+}
+
+h5 {
+	@include auto_margin;
+
+	font-family: "Rad-SemiBold";
+/*	padding: 1rem 0; */
+	
+	margin-top: 2rem;
+	margin-bottom: 0;
+
+	padding: 1rem 0 0 4rem;
+	width: 66.6%;
+
+	border-bottom: solid 1px $gray;
+
+	font-size: 1.5rem;
+	text-align: left;
+}
+
+a.regular {
+	font-family: "Mono-Bold";
+	color: $white;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:active, &:hover {
+		color: $gray;
+		text-decoration: underline;
+	}
+}
+
+/* ID BLOCKS */
+
+#title-text { /* for transition down from top */
+	@include auto_margin;
+
+	width: 75%;
+	height: 4rem;
+	background: rgba($black, 0.0);
+	color: $gray;
+
+	overflow: scroll;
+
+	animation: transition-in 1.5s;
+	-webkit-animation: transition-in 1.5s;
+	-moz-animation: transition-in 1.5s;
+
+	transition: 1s;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+
+	&:hover {
+		height: 100%;
+		background: rgba($black, 0.5);
+		color: $light;
+	}
+}
+
+#content-section { /* static block same style as title-text but with no hover animation */
+	@include auto_margin;
+
+	width: 75%;
+	height: 100%; 
+	background: rgba($black, 0.75);
+	color: $light;
+
+/*	padding-bottom: 4rem; */
+	overflow: scroll;
+
+	animation: transition-in 1.5s;
+	-webkit-animation: transition-in 1.5s;
+	-moz-animation: transition-in 1.5s;
+}
+
+@keyframes transition-in {
+	from {
+		opacity: 0; /* this is the smoothest transition, so it wins this round */
+	}
+	to { 
+		opacity: 1;
+	}
+}
+
+/* CLASS BLOCKS */
+
+p {
+	@include auto_margin;
+
+	width: 66.6%;
+	text-align: left;
+}
+
+p.blurb {
+	width: 50%;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+p.signature {
+	padding-left: 4rem;
+	font-size: 1.5rem;
+}
+
+p.disclaimer {
+	margin-top: 4rem;
+	color: $gray;
+	font-size: 0.75rem;
+}
+
+p.note {
+	margin-top: 2rem;
+	color: $gray;
+	font-size: 0.75rem;
+}
+
+p.codeblock {
+	color: $white;
+	width: 50%;
+	background: rgba($red, 0.25);
+	font-family: "Mono";
+	padding: 1rem;
+}
+
+p.project-blurb {
+	border-bottom: solid 1px $gray;
+	padding-bottom: 1rem;
+}
+
+span.codeblock {
+	color: $white;
+	width: 100%;
+	background: rgba($red, 0.25);
+	font-family: "Mono";
+	padding: 5px;
+}
+
+span.strong {
+	font-family: "Rad-SemiBold";
+}
+
+ul {
+	@include auto_margin;
+
+	width: 60%;
+	text-align: left;
+	list-style-type: square;
+}
+
+img.headshot {
+	width: 100%;
+}
+
+img.icon {
+	opacity: 0.5;
+	margin: 0 10px 0 10px;
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+
+	transition: 0.25s;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+div.portfolio-img {
+	@include auto_margin;
+
+	width: 66.6%;
+	height: 16rem;
+/*	background-size: cover; */
+	padding: 0;
+
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+
+	border-radius: 1rem;
+}
+
+a.portfolio-img {
+	width: 100%;
+	height: 16rem;
+	line-height: 16rem;
+
+	cursor: pointer;
+
+	background: rgba($black, 0.0);
+	color: rgba($light, 0.0);
+
+	text-decoration: none;
+	font-family: "Mono-Bold";
+	font-size: 2rem;
+
+	display: block;
+	border-radius: 1rem;
+
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+
+	&:hover {
+		background: rgba($black, 0.5);
+		color: rgba($light, 1);
+	}
+}

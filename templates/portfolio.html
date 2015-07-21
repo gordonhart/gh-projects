@@ -1,0 +1,34 @@
+<!-- macro for portfolio link pieces -->
+{% macro portfolio_image(imgURL, name) %}
+<div class="portfolio-img" style="background: url('{{ imgURL }}');background-size:cover;background-position:center;">
+  <a class="portfolio-img">{{ name }}</a>
+</div>
+{% endmacro %}
+
+{% extends 'layout.html' %}
+
+{% block content %}
+<div id="content-section">
+
+  <h1>Portfolio</h1>
+  <p class="blurb">Click the <a class="regular" href="#Full">Full Portfolio</a> link below to view a more curated and concise set of images, or click on an <a class="regular" href="#Sections">Individual Section</a> to view content by category. Finally, scroll to the bottom of the page to see <a class="regular" href="#Sketches">Sketches</a>, unfinished projects, and other ventures that haven't yet made it off of (or onto) the drawing board.</p>
+
+  <h5 id="Full">Full Portfolio</h5>
+  <p>Complete design portfolio: elements from all of the following sections with an emphasis on branding, print, and apparel design. Clicking on the link below will link to a PDF that you can view in your browser or download to view with your document reader of choice.</p>
+  {{ portfolio_image('/static/images/portfolio/full.png', 'Full Portfolio')}}
+
+  <h5 id="Sections">Individual Sections</h5>
+  <p>PDF documents broken up by content type. Each section will hold more pieces of each individual style than can be found in the <a class="regular">Full Portfolio</a>.
+  {{ portfolio_image('/static/images/portfolio/vector.gif', 'Vector') }}
+  {{ portfolio_image('/static/images/portfolio/motion.jpg', 'Motion') }}
+  {{ portfolio_image('/static/images/portfolio/3D.png', '3D') }}
+  {{ portfolio_image('/static/images/portfolio/raster.jpeg', 'Raster') }}
+
+  <h5 id="Sketches">Sketches</h5>
+  <p>A peek inside my sketchbook—see the thought process behind the works. Everything from early conceptual designs to quick 3D visualization renders to abandoned CAD creations. Emphasis on unfinished works that have only made it as far as the drawing board.</p>
+  {{ portfolio_image('/static/images/portfolio/sketches.jpg', 'Sketches') }}
+
+  <br /><br />
+
+</div>
+{% endblock %}

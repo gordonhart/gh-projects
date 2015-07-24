@@ -1,5 +1,9 @@
-{% import 'bg.html' as bg %}
-{% import 'slider.html' as slider %}
+{% import 'macros/bg.html' as bg %}
+
+<!-- NOTE: 
+This HTML page is rendered from a variety of templates so spacing and indentation may be wonky.
+Traverse at your own risk.
+-->
 
 <!doctype html>
 <html lang="en">
@@ -20,18 +24,12 @@
     {# pass the location attributes on to the background slider#}
     {{ bg.slide(locs.from, locs.to) }}
 
-    <!-- CONTENT SLIDER UNUSED FOR NOW
-    {# content slider #}
-    {{ slider.slide(locs.from, locs.to) }}
-    -->
-
   </head>
     
   <body>
     <div id="bg"> <!-- div for animated background -->
     
       <main>
-        <!-- NOTE: the following is rendered from a template so indentation may be wonky -->
         {% block content %}{% endblock %}
       </main>
 

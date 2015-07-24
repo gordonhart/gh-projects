@@ -306,7 +306,8 @@ p.codeblock {
 
 p.project-blurb {
   border-bottom: solid 1px #DDDDDD;
-  padding-bottom: 1rem; }
+  padding-bottom: 1rem;
+  margin-bottom: 3rem; }
 
 span.codeblock {
   color: #FFFFFF;

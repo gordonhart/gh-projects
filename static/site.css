@@ -236,18 +236,20 @@ a.regular {
   margin-left: auto;
   margin-right: auto;
   width: 75%;
-  height: 4rem;
+  height: 100%;
   background: rgba(34, 34, 34, 0);
   color: #DDDDDD;
+  /*	padding-top:2rem; */
   overflow: scroll;
   animation: transition-in 1.5s;
   -webkit-animation: transition-in 1.5s;
   -moz-animation: transition-in 1.5s;
   transition: 1s;
   -webkit-transition: 1s;
-  -moz-transition: 1s; }
+  -moz-transition: 1s;
+  transform: translateY(calc(-100% + 5rem)); }
   #title-text:hover {
-    height: 100%;
+    transform: translateY(0);
     background: rgba(34, 34, 34, 0.5);
     color: #F8F8F8; }
 
@@ -308,6 +310,14 @@ p.project-blurb {
   border-bottom: solid 1px #DDDDDD;
   padding-bottom: 1rem;
   margin-bottom: 3rem; }
+
+h3.title-bottom {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 span.codeblock {
   color: #FFFFFF;

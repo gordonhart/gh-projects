@@ -1,6 +1,6 @@
 <!-- macro for portfolio link pieces -->
 {% macro portfolio_image(imgURL, name) %}
-<div class="portfolio-img" style="background: url('{{ imgURL }}');background-size:cover;background-position:center;">
+<div id="{{ name }}" class="portfolio-img" style="background: url('{{ imgURL }}');background-size:cover;background-position:center;">
   <a class="portfolio-img">{{ name }}</a>
 </div>
 {% endmacro %}

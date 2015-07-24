@@ -91,9 +91,11 @@ a.regular {
 	@include auto_margin;
 
 	width: 75%;
-	height: 4rem;
+	height: 100%;
 	background: rgba($black, 0.0);
 	color: $gray;
+
+/*	padding-top:2rem; */
 
 	overflow: scroll;
 
@@ -105,11 +107,13 @@ a.regular {
 	-webkit-transition: 1s;
 	-moz-transition: 1s;
 
+	transform: translateY(calc(-100% + 5rem));
+
 	&:hover {
-		height: 100%;
+		transform: translateY(0);
 		background: rgba($black, 0.5);
 		color: $light;
-	}
+	} 
 }
 
 #content-section { /* static block same style as title-text but with no hover animation */
@@ -181,6 +185,16 @@ p.project-blurb {
 	border-bottom: solid 1px $gray;
 	padding-bottom: 1rem;
 	margin-bottom: 3rem;
+}
+
+h3.title-bottom {
+	@include auto_margin;
+
+	position:absolute;
+
+	bottom:0; 
+	left:0;
+	right:0;
 }
 
 span.codeblock {

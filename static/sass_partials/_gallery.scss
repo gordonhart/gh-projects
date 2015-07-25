@@ -1,0 +1,58 @@
+@import "colors-fonts";
+@import "mixins";
+
+#overlay {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	display: inline-block;
+
+	background: rgba(black, 0.9);
+	opacity: 0.0;
+
+	z-index: -1; /* behind the main content block until pulled up */
+}
+
+h1.gallery {
+	font-family: "Rad-Light";
+}
+
+img.gallery-img {
+	display: block;
+	margin: 1rem auto;
+
+	width: calc(100% - 200px);
+
+	border-radius: 1rem;
+}
+
+img.gallery-full-img {
+	display: block;
+
+	margin: 75px auto 25px auto;
+	height: calc(100% - 150px);
+}
+
+span.label {
+	font-family: "Mono-Bold";
+	color: $light;
+}
+
+a.spotlight {
+	font-size: 0.75rem;
+	font-family: "Mono-Bold";
+	
+	color: $gray;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:active, &:hover {
+		color: $light;
+	}
+}

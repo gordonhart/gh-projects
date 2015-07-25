@@ -1,9 +1,12 @@
 from flask import Flask, request, session, redirect, url_for, abort, render_template, flash, Response, make_response
 
+import json
+
+
+# SETUP ======================================================================================
+
 app = Flask(__name__) #APPLICATION
 app.config.from_object(__name__)
-
-# SET UP SESSION VARIABLE -----------------------
 
 app.secret_key = 'gh-projects' # decryption key for session variable
 
@@ -24,9 +27,8 @@ def getLocs(index): # page background scrolling using session variables
 	}
 	return locs
 
-##################
-##### ROUTES #####
-##################
+
+# ROUTES =====================================================================================
 
 # HOME PAGE -------------------------------------
 
@@ -50,6 +52,7 @@ def projects():
 
 
 @app.route('/portfolio')
+@app.route('/portfolio/gallery')
 def portfolio():
 	fromTo = getLocs(3)
 	return render_template('portfolio.html', locs=fromTo, active='portfolio')
@@ -62,14 +65,29 @@ def contact():
 
 # SUB PAGES -------------------------------------
 
-@app.route('/about/whyRobots')
+@app.route('/about/why_robots')
 def whyRobots():
 	fromTo = getLocs(1)
-	return render_template('whyRobots.html', locs=fromTo, active='about')
+	return render_template('subpages/why_robots.html', locs=fromTo, active='about')
 
-##################
-##### TO RUN #####
-##################
+
+@app.route('/portfolio/gallery/<gallery>') # dynamic path to different galleries
+def gallery(gallery='full'):
+	fromTo = getLocs(3)
+
+	filename = 'static/gallery/%s.json' % gallery # read gallery information in from JSON file
+
+	gallery_file = open(filename, 'r') # open and read from JSON file
+	gallery_text = gallery_file.read()
+	gallery_text = json.loads(gallery_text) # parse JSON file as text
+	gallery_file.close()
+
+#	return render_template('portfolio/gallery.html', locs=fromTo, active='portfolio', css="dark.css")
+#	custom CSS can be defined, but I no longer have any use for it....
+	return render_template('portfolio/gallery.html', locs=fromTo, active='portfolio', gallery=gallery_text)
+
+
+# RUN =======================================================================================
 
 if __name__ == '__main__':
 	app.run(debug=True)

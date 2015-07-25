@@ -1,0 +1,33 @@
+{%- extends 'layout.html' %}
+
+{%- block content %}
+<div id="content-section">
+
+  <h1 class="gallery"><span class="label">Gallery | </span>{{ gallery.name }}</h1>
+
+  <p class="blurb">{{ gallery.overview }}</p>
+
+  {%- for image in gallery.images %}
+  <h5></h5>
+  <p><span class="label">Name | </span>{{ image.name }}
+  <p><span class="label">Medium | </span>{{ image.medium }}</p>
+
+  {%- for sentence in image.description %}
+  <p>{{ sentence }}</p>
+  {%- endfor %}
+
+  <img class="gallery-img" src="/static/gallery/{{ gallery.link }}/{{ image.url }}" />
+  <a class="spotlight" href="#" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ image.url }}');">view image fullscreen</a>
+
+  <br /><br />
+  {%- endfor %}
+  
+  <br /><br />
+
+</div>
+
+<div id="overlay">
+  <img id="overlay-image" class="gallery-full-img" src="/static/images/portfolio/full.jpg" />
+  <a class="spotlight" href="#" onclick="spotlight('none');">exit image fullscreen</a>
+</div>
+{%- endblock %}

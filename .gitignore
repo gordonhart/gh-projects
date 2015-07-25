@@ -2,3 +2,5 @@ venv
 *.pyc
 
 heroku_notes.txt
+
+static/*.css.map

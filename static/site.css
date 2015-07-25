@@ -1,3 +1,8 @@
+/* 
+The main CSS file is compiled entirely of submodules. This approach allows for 
+easy swapping in and out of features in the event that I want to use different
+CSS files for different areas of the website.
+*/
 /* COLORS */
 /* FONTS */
 @font-face {
@@ -28,6 +33,217 @@
   font-family: "Mono-Bold-Ital";
   src: url(fonts/AnonymousPro-BoldItalic.ttf); }
 /* USEFUL MIXINS */
+/* NOTE: CSS for animated background is contained in bg.html */
+/* STANDARD HTML ELEMENTS */
+html, body {
+  font-family: "Rad-Regular";
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px; }
+
+main {
+  width: 100%;
+  min-width: 800px;
+  height: calc(100% - 70px);
+  /* this works !!!!! */
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+
+h1, h2 {
+  font-family: "Rad-SemiBold";
+  padding: 1rem 0;
+  margin: 0 auto;
+  width: 66.6%;
+  font-size: 3rem;
+  text-align: center; }
+
+h2 {
+  padding: 1rem 2rem 0 2rem;
+  border-bottom: solid 1px #DDDDDD; }
+
+h3 {
+  font-family: "Rad-SemiBold";
+  padding: 1rem 0;
+  margin: 0;
+  font-size: 2rem; }
+
+h5 {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Rad-SemiBold";
+  /*	padding: 1rem 0; */
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 1rem 0 0 4rem;
+  width: 66.6%;
+  border-bottom: solid 1px #DDDDDD;
+  font-size: 1.5rem;
+  text-align: left; }
+
+a.regular {
+  font-family: "Mono-Bold";
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer; }
+  a.regular:active, a.regular:hover {
+    color: #DDDDDD;
+    text-decoration: underline; }
+
+/* ID BLOCKS */
+#title-text {
+  /* for transition down from top */
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  height: 100%;
+  background: rgba(34, 34, 34, 0);
+  color: #DDDDDD;
+  /*	padding-top:2rem; */
+  overflow: scroll;
+  animation: transition-in 1.5s;
+  -webkit-animation: transition-in 1.5s;
+  -moz-animation: transition-in 1.5s;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transform: translateY(calc(-100% + 5rem)); }
+  #title-text:hover {
+    transform: translateY(0);
+    background: rgba(34, 34, 34, 0.75);
+    color: #F8F8F8; }
+
+#content-section {
+  /* static block same style as title-text but with no hover animation */
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  height: 100%;
+  background: rgba(34, 34, 34, 0.75);
+  color: #F8F8F8;
+  /*	padding-bottom: 4rem; */
+  overflow: scroll;
+  animation: transition-in 1.5s;
+  -webkit-animation: transition-in 1.5s;
+  -moz-animation: transition-in 1.5s; }
+
+@keyframes transition-in {
+  from {
+    opacity: 0;
+    /* this is the smoothest transition, so it wins this round */ }
+  to {
+    opacity: 1; } }
+/* CLASS BLOCKS */
+p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 66.6%;
+  text-align: left; }
+
+p.blurb {
+  width: 50%;
+  font-size: 1.2rem;
+  text-align: center; }
+
+p.signature {
+  padding-left: 4rem;
+  font-size: 1.5rem; }
+
+p.disclaimer {
+  margin-top: 4rem;
+  color: #DDDDDD;
+  font-size: 0.75rem; }
+
+p.note {
+  margin-top: 2rem;
+  color: #DDDDDD;
+  font-size: 0.75rem; }
+
+p.codeblock {
+  color: #FFFFFF;
+  width: 50%;
+  background: rgba(114, 0, 0, 0.25);
+  font-family: "Mono";
+  padding: 1rem; }
+
+p.project-blurb {
+  border-bottom: solid 1px #DDDDDD;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem; }
+
+h3.title-bottom {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0; }
+
+span.codeblock {
+  color: #FFFFFF;
+  width: 100%;
+  background: rgba(114, 0, 0, 0.25);
+  font-family: "Mono";
+  padding: 5px; }
+
+span.strong {
+  font-family: "Rad-SemiBold"; }
+
+ul {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  text-align: left;
+  list-style-type: square; }
+
+img.headshot {
+  width: 100%; }
+
+img.icon {
+  opacity: 0.5;
+  margin: 0 10px 0 10px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s; }
+  img.icon:hover {
+    opacity: 1; }
+
+div.portfolio-img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 66.6%;
+  height: 16rem;
+  /*	background-size: cover; */
+  padding: 0;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem; }
+
+a.portfolio-img {
+  width: 100%;
+  height: 16rem;
+  line-height: 16rem;
+  cursor: pointer;
+  background: rgba(34, 34, 34, 0);
+  color: rgba(248, 248, 248, 0);
+  text-decoration: none;
+  font-family: "Mono-Bold";
+  font-size: 2rem;
+  display: block;
+  border-radius: 1rem;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s; }
+  a.portfolio-img:hover {
+    background: rgba(34, 34, 34, 0.5);
+    color: #f8f8f8; }
+
 /* NAV CSS */
 /* USEFUL MIXINS */
 nav {
@@ -170,215 +386,75 @@ span.lang-name {
   position: relative; }
 
 /* programming language proficiency bar stylings */
-/* NOTE: CSS for animated background is contained in bg.html */
-/* STANDARD HTML ELEMENTS */
-html, body {
+/* COLORS */
+/* FONTS */
+@font-face {
+  font-family: "Rad-Light";
+  src: url(fonts/Rajdhani-Light.ttf); }
+@font-face {
+  font-family: "Rad-Bold";
+  src: url(fonts/Rajdhani-Bold.ttf); }
+@font-face {
+  font-family: "Rad-Medium";
+  src: url(fonts/Rajdhani-Medium.ttf); }
+@font-face {
   font-family: "Rad-Regular";
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 16px; }
-
-main {
-  width: 100%;
-  min-width: 800px;
-  height: calc(100% - 70px);
-  /* this works !!!!! */
-  margin: 0;
-  padding: 0;
-  text-align: center; }
-
-h1, h2 {
+  src: url(fonts/Rajdhani-Regular.ttf); }
+@font-face {
   font-family: "Rad-SemiBold";
-  padding: 1rem 0;
-  margin: 0 auto;
-  width: 66.6%;
-  font-size: 3rem;
-  text-align: center; }
-
-h2 {
-  padding: 1rem 2rem 0 2rem;
-  border-bottom: solid 1px #DDDDDD; }
-
-h3 {
-  font-family: "Rad-SemiBold";
-  padding: 1rem 0;
-  margin: 0;
-  font-size: 2rem; }
-
-h5 {
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "Rad-SemiBold";
-  /*	padding: 1rem 0; */
-  margin-top: 2rem;
-  margin-bottom: 0;
-  padding: 1rem 0 0 4rem;
-  width: 66.6%;
-  border-bottom: solid 1px #DDDDDD;
-  font-size: 1.5rem;
-  text-align: left; }
-
-a.regular {
+  src: url(fonts/Rajdhani-SemiBold.ttf); }
+@font-face {
+  font-family: "Mono";
+  src: url(fonts/AnonymousPro-Regular.ttf); }
+@font-face {
+  font-family: "Mono-Ital";
+  src: url(fonts/AnonymousPro-Italic.ttf); }
+@font-face {
   font-family: "Mono-Bold";
-  color: #FFFFFF;
-  text-decoration: none;
-  cursor: pointer; }
-  a.regular:active, a.regular:hover {
-    color: #DDDDDD;
-    text-decoration: underline; }
-
-/* ID BLOCKS */
-#title-text {
-  /* for transition down from top */
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
+  src: url(fonts/AnonymousPro-Bold.ttf); }
+@font-face {
+  font-family: "Mono-Bold-Ital";
+  src: url(fonts/AnonymousPro-BoldItalic.ttf); }
+/* USEFUL MIXINS */
+#overlay {
   height: 100%;
-  background: rgba(34, 34, 34, 0);
-  color: #DDDDDD;
-  /*	padding-top:2rem; */
-  overflow: scroll;
-  animation: transition-in 1.5s;
-  -webkit-animation: transition-in 1.5s;
-  -moz-animation: transition-in 1.5s;
-  transition: 1s;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  transform: translateY(calc(-100% + 5rem)); }
-  #title-text:hover {
-    transform: translateY(0);
-    background: rgba(34, 34, 34, 0.5);
-    color: #F8F8F8; }
-
-#content-section {
-  /* static block same style as title-text but with no hover animation */
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
-  height: 100%;
-  background: rgba(34, 34, 34, 0.75);
-  color: #F8F8F8;
-  /*	padding-bottom: 4rem; */
-  overflow: scroll;
-  animation: transition-in 1.5s;
-  -webkit-animation: transition-in 1.5s;
-  -moz-animation: transition-in 1.5s; }
-
-@keyframes transition-in {
-  from {
-    opacity: 0;
-    /* this is the smoothest transition, so it wins this round */ }
-  to {
-    opacity: 1; } }
-/* CLASS BLOCKS */
-p {
-  margin-left: auto;
-  margin-right: auto;
-  width: 66.6%;
-  text-align: left; }
-
-p.blurb {
-  width: 50%;
-  font-size: 1.2rem;
-  text-align: center; }
-
-p.signature {
-  padding-left: 4rem;
-  font-size: 1.5rem; }
-
-p.disclaimer {
-  margin-top: 4rem;
-  color: #DDDDDD;
-  font-size: 0.75rem; }
-
-p.note {
-  margin-top: 2rem;
-  color: #DDDDDD;
-  font-size: 0.75rem; }
-
-p.codeblock {
-  color: #FFFFFF;
-  width: 50%;
-  background: rgba(114, 0, 0, 0.25);
-  font-family: "Mono";
-  padding: 1rem; }
-
-p.project-blurb {
-  border-bottom: solid 1px #DDDDDD;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem; }
-
-h3.title-bottom {
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0; }
-
-span.codeblock {
-  color: #FFFFFF;
   width: 100%;
-  background: rgba(114, 0, 0, 0.25);
-  font-family: "Mono";
-  padding: 5px; }
-
-span.strong {
-  font-family: "Rad-SemiBold"; }
-
-ul {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  text-align: left;
-  list-style-type: square; }
-
-img.headshot {
-  width: 100%; }
-
-img.icon {
-  opacity: 0.5;
-  margin: 0 10px 0 10px;
-  height: 50px;
-  width: 50px;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   display: inline-block;
-  transition: 0.25s;
-  -webkit-transition: 0.25s;
-  -moz-transition: 0.25s; }
-  img.icon:hover {
-    opacity: 1; }
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0.0;
+  z-index: -1;
+  /* behind the main content block until pulled up */ }
 
-div.portfolio-img {
-  margin-left: auto;
-  margin-right: auto;
-  width: 66.6%;
-  height: 16rem;
-  /*	background-size: cover; */
-  padding: 0;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+h1.gallery, h2.gallery {
+  font-family: "Rad-Light"; }
+
+img.gallery-img {
+  display: block;
+  margin: 1rem auto;
+  width: calc(100% - 200px);
   border-radius: 1rem; }
 
-a.portfolio-img {
-  width: 100%;
-  height: 16rem;
-  line-height: 16rem;
-  cursor: pointer;
-  background: rgba(34, 34, 34, 0);
-  color: rgba(248, 248, 248, 0);
-  text-decoration: none;
-  font-family: "Mono-Bold";
-  font-size: 2rem;
+img.gallery-full-img {
   display: block;
-  border-radius: 1rem;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s; }
-  a.portfolio-img:hover {
-    background: rgba(34, 34, 34, 0.5);
-    color: #f8f8f8; }
+  margin: 75px auto 25px auto;
+  height: calc(100% - 150px); }
+
+span.label {
+  font-family: "Mono-Bold";
+  color: #F8F8F8; }
+
+a.spotlight {
+  font-size: 0.75rem;
+  font-family: "Mono-Bold";
+  color: #DDDDDD;
+  text-decoration: none;
+  cursor: pointer; }
+  a.spotlight:active, a.spotlight:hover {
+    color: #F8F8F8; }
 
 /*# sourceMappingURL=site.css.map */

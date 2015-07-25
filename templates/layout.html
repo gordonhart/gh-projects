@@ -1,4 +1,4 @@
-{% import 'macros/bg.html' as bg %}
+{%- import 'macros/bg.html' as bg %}
 
 <!-- NOTE: 
 This HTML page is rendered from a variety of templates so spacing and indentation may be wonky.
@@ -17,12 +17,18 @@ Traverse at your own risk.
 
     <title>gh-projects</title>
 
-    <link rel="stylesheet" href="/static/site.css">
+    {#- allows the use of custom css for certain pages without making it necessary to define for each page #}
+    {%- if css is not defined %}
+      {%- set css = "site.css" %}
+    {%- endif %}
 
+    <link rel="stylesheet" href="/static/{{ css }}">
+
+    <script type="text/javascript" src="/static/js/focus.js"></script>
     <script type="text/javascript" src="/static/js/mobile_redirect.js"></script>
 
-    {# pass the location attributes on to the background slider#}
-    {{ bg.slide(locs.from, locs.to) }}
+    {#- pass the location attributes on to the background slider#}
+    {{- bg.slide(locs.from, locs.to) }}
 
   </head>
     
@@ -30,7 +36,7 @@ Traverse at your own risk.
     <div id="bg"> <!-- div for animated background -->
     
       <main>
-        {% block content %}{% endblock %}
+        {%- block content %}{% endblock %}
       </main>
 
     </div>

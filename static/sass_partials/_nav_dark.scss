@@ -1,0 +1,110 @@
+/* NAV CSS */
+
+@import "mixins";
+
+@mixin nav-el {
+	margin: 0px 15px;
+	display: inline-block; 
+	vertical-align:bottom;
+}
+
+nav {
+	@include sticky-bottom-element;
+
+	margin-bottom: 0px; /* this isn't good.... */
+	margin-left: -10px;
+
+	width: 100%;
+}
+
+footer {
+	@include auto_margin;
+	@include uniform-padding(10px);
+
+	@include sticky-bottom-container;
+
+	text-align: center;
+	color: $black;
+	background: $black;
+
+	height: 50px;
+}
+
+#sticky-element {
+	width:100%;
+	height:auto;
+
+	position: fixed;
+	bottom: 0;
+}
+
+a.nav-tab {
+	@include nav-el;
+	@include uniform-padding(10px);
+
+	text-decoration: none;
+	color: $light;
+
+	border-radius: 10px 10px 0px 0px;
+	border-top: 1px solid $gray;
+	border-left: 1px solid $gray;
+	border-right: 1px solid $gray;
+
+	width: 75px;
+	height: 20px;
+
+	&.current {
+		height: 15px; 
+		background: rgba($light, 0.05);
+
+/*		animation: button-collapse 0.35s;
+		transition-timing-function: ease-in; */
+
+		&:hover { 
+			height: 15px;
+			background: rgba($light, 0.05);
+		} /* do nothing on hover for selected tab */
+	}
+
+	transition: 0.20s;
+	-webkit-transition: 0.20s;
+	-moz-transition: 0.20s;
+
+	&:hover {
+		color: $white;
+
+		height: 25px;
+		background: rgba($light, 0.20); 
+		cursor: pointer;
+	}
+
+	&:active { /* simulate the collapse when the button is clicked */
+		height: 15px; 
+		background: rgba($black, 0.25);
+	}
+}
+
+a.nav-title {
+	@include nav-el;
+	@include uniform-padding(10px);
+
+	vertical-align:middle;
+	margin-top: auto;
+	margin-bottom:auto;
+
+	width:200px;
+
+	color: $light;
+	text-decoration: none;
+	font-size: 2rem;
+
+	transition: 0.20s;
+	-webkit-transition: 0.20s;
+	-moz-transition: 0.20s;
+
+	&:hover {
+		font-size: 2.2rem;
+		color: $white;
+		cursor: pointer;
+	}
+}

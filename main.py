@@ -8,6 +8,10 @@ import json
 app = Flask(__name__) #APPLICATION
 app.config.from_object(__name__)
 
+app.jinja_env.autoescape = False # this allows HTML tags to be read in from strings in the Gallery section
+app.jinja_env.lstrip_blocks = True # strip the whitespace from jinja template lines
+app.jinja_env.trim_blocks = True
+
 app.secret_key = 'gh-projects' # decryption key for session variable
 
 def getLocs(index): # page background scrolling using session variables
@@ -29,8 +33,6 @@ def getLocs(index): # page background scrolling using session variables
 
 
 # ROUTES =====================================================================================
-
-# HOME PAGE -------------------------------------
 
 @app.route('/')
 def landing_page(): 
@@ -79,8 +81,9 @@ def gallery(gallery='full'):
 
 	gallery_file = open(filename, 'r') # open and read from JSON file
 	gallery_text = gallery_file.read()
-	gallery_text = json.loads(gallery_text) # parse JSON file as text
 	gallery_file.close()
+	
+	gallery_text = json.loads(gallery_text) # parse JSON file as text
 
 #	return render_template('portfolio/gallery.html', locs=fromTo, active='portfolio', css="dark.css")
 #	custom CSS can be defined, but I no longer have any use for it....

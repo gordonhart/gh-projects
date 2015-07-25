@@ -1,33 +1,47 @@
-{%- extends 'layout.html' %}
+{% extends 'layout.html' %}
 
-{%- block content %}
+{% block content %}
 <div id="content-section">
 
   <h1 class="gallery"><span class="label">Gallery | </span>{{ gallery.name }}</h1>
 
   <p class="blurb">{{ gallery.overview }}</p>
 
-  {%- for image in gallery.images %}
-  <h5></h5>
+  {% for image in gallery.images %}
+  {% set cur_index = loop.index %}
+  <h5 id="{{ cur_index }}"></h5>
   <p><span class="label">Name | </span>{{ image.name }}
   <p><span class="label">Medium | </span>{{ image.medium }}</p>
 
-  {%- for sentence in image.description %}
+  {% for sentence in image.description %}
   <p>{{ sentence }}</p>
-  {%- endfor %}
+  {% endfor %}
 
-  <img class="gallery-img" src="/static/gallery/{{ gallery.link }}/{{ image.url }}" />
-  <a class="spotlight" href="#" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ image.url }}');">view image fullscreen</a>
+  {% for url in image.urls %}
+  <img class="gallery-img" {% if image.size is defined %}style="width:{{ image.size }} !important; border-radius: 0px !important;"{% endif %} src="/static/gallery/{{ gallery.link }}/{{ url }}" />
+  <a class="spotlight" href="#{{ cur_index }}" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');">view image fullscreen</a>
+  {% endfor %}
 
   <br /><br />
-  {%- endfor %}
+  
+  {# link to each image at the bottom of each image for navigation purposes #}
+  {% for link in gallery.images %}
+  {% if cur_index != loop.index %}
+  <a class="spotlight" href="#{{ loop.index }}">{{ loop.index }}</a>&nbsp;
+  {% else %}
+  <a class="spotlight" href="#{{ loop.index }}">[{{ loop.index }}]</a>&nbsp;
+  {% endif %}
+  {% endfor %}
+
+  <br />
+  {% endfor %}
   
   <br /><br />
 
 </div>
 
 <div id="overlay">
-  <img id="overlay-image" class="gallery-full-img" src="/static/images/portfolio/full.jpg" />
-  <a class="spotlight" href="#" onclick="spotlight('none');">exit image fullscreen</a>
+  <img id="overlay-image" class="gallery-full-img" src="/static/images/none.png" />
+  <a class="spotlight" onclick="spotlight('/static/images/none.png');">exit image fullscreen</a>
 </div>
-{%- endblock %}
+{% endblock %}

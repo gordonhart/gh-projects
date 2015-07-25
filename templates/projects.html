@@ -1,35 +1,35 @@
-{%- extends 'layout.html' %}
+{% extends 'layout.html' %}
 
-{%- block content %}
+{% block content %}
 <div id="content-section">
   
   <h1>Projects</h1>
   <p class="blurb">Pictures, write-ups, and videos of some of the projects that I've spent time on recently.</p>
   <br />
 
-  {{- project_image('/static/images/projects/opentrons.jpg', '#', 'OpenTrons', 'Details of the work done during my time at the biotech laboratory automation startup OpenTrons Labworks.') }}
+  {{ project_image('/static/images/projects/opentrons.jpg', '#', 'OpenTrons', 'Details of the work done during my time at the biotech laboratory automation startup OpenTrons Labworks.') }}
 
-  {{- project_image('/static/images/projects/machineWriting.JPG', 'http://gordonhart.co/machine-writing/', 'Machine Writing', 'A collection of posts detailing the process of teaching my CNC machine to write.') }}
+  {{ project_image('/static/images/projects/machineWriting.JPG', 'http://gordonhart.co/machine-writing/', 'Machine Writing', 'A collection of posts detailing the process of teaching my CNC machine to write.') }}
 
-  {{- project_image('/static/images/projects/endEffector.JPG', '#', 'Wrist Unit', 'My piece for the McGill Robotics entry to the Mars Society\'s 2014-2015 University Rover Challenge.') }}
+  {{ project_image('/static/images/projects/endEffector.JPG', '#', 'Wrist Unit', 'My piece for the McGill Robotics entry to the Mars Society\'s 2014-2015 University Rover Challenge.') }}
 
-  {{- project_image('/static/images/projects/DrainageTD.png', 'http://gordonhart.co/2015/05/24/build-drainage-tower-defense-the-unity-game-engine/', 'Drainage TD', 'Drainage Tower Defense and the Unity Game Engine: term project for a software engineering course.') }}
+  {{ project_image('/static/images/projects/DrainageTD.png', 'http://gordonhart.co/2015/05/24/build-drainage-tower-defense-the-unity-game-engine/', 'Drainage TD', 'Drainage Tower Defense and the Unity Game Engine: term project for a software engineering course.') }}
 
-  {{- project_image('/static/images/projects/controller.JPG', 'http://gordonhart.co/2015/01/08/build-computer-controller/', 'Computer Controller', 'CNC\'d computer remote controller.') }}
+  {{ project_image('/static/images/projects/controller.JPG', 'http://gordonhart.co/2015/01/08/build-computer-controller/', 'Computer Controller', 'CNC\'d computer remote controller.') }}
 
-  {{- project_image('/static/images/projects/iguanaland.jpg', 'http://gordonhart.co/2015/04/14/build-iguanaland/', 'IGUANALAND', 'First forays into web development: a theme-based message board for a school assignment. No CSS, HTML5, or JavaScript allowed!') }}
+  {{ project_image('/static/images/projects/iguanaland.jpg', 'http://gordonhart.co/2015/04/14/build-iguanaland/', 'IGUANALAND', 'First forays into web development: a theme-based message board for a school assignment. No CSS, HTML5, or JavaScript allowed!') }}
 
-  {{- project_image('/static/images/projects/shapeoko.JPG', 'http://gordonhart.co/2014/08/18/intro-my-machine-shapeoko-2/', 'Shapeoko', 'An overview of the assembly, calibration, and troubleshooting process involved in the setup of a Shapeoko 2.') }}
+  {{ project_image('/static/images/projects/shapeoko.JPG', 'http://gordonhart.co/2014/08/18/intro-my-machine-shapeoko-2/', 'Shapeoko', 'An overview of the assembly, calibration, and troubleshooting process involved in the setup of a Shapeoko 2.') }}
 
   <br /><br />
 
 </div>
-{%- endblock %}
+{% endblock %}
 
 
-{%- macro project_image(imgURL, link, name, blurb) %}
+{% macro project_image(imgURL, link, name, blurb) %}
 <div class="portfolio-img" style="background: url('{{ imgURL }}');background-size:cover;background-position:center;">
   <a class="portfolio-img" href="{{ link }}">{{ name }}</a>
 </div>
 <p class="project-blurb">{{ blurb }}</p>
-{%- endmacro %}
+{% endmacro %}

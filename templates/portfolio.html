@@ -1,4 +1,4 @@
-{%- extends 'layout.html' %}
+{% extends 'layout.html' %}
 
 {% block content %}
 <div id="content-section">
@@ -8,28 +8,28 @@
 
   <h5 id="Full">Full Portfolio</h5>
   <p>Complete design portfolio: elements from all of the following sections with an emphasis on branding, print, and apparel design. Clicking on the link below will link to a PDF that you can view in your browser or download to view with your document reader of choice.</p>
-  {{- portfolio_image('/static/images/portfolio/full.jpg', 'Full Portfolio', '/portfolio/gallery/full')}}
+  {{ portfolio_image('/static/images/portfolio/full.jpg', 'Full Portfolio', '/portfolio/gallery/full')}}
 
   <h5 id="Sections">Individual Sections</h5>
   <p>PDF documents broken up by content type. Each section will hold more pieces of each individual style than can be found in the <a class="regular">Full Portfolio</a>.
-  {{- portfolio_image('/static/images/portfolio/vector.gif', 'Vector', '#') }}
-  {{- portfolio_image('/static/images/portfolio/motion.jpg', 'Motion', '/portfolio/gallery/motion') }}
-  {{- portfolio_image('/static/images/portfolio/3D.jpg', '3D', '#') }}
-  {{- portfolio_image('/static/images/portfolio/raster.jpg', 'Raster', '#') }}
+  {{ portfolio_image('/static/images/portfolio/vector.gif', 'Vector', '#') }}
+  {{ portfolio_image('/static/images/portfolio/motion.jpg', 'Motion', '/portfolio/gallery/motion') }}
+  {{ portfolio_image('/static/images/portfolio/3D.jpg', '3D', '#') }}
+  {{ portfolio_image('/static/images/portfolio/raster.jpg', 'Raster', '/portfolio/gallery/raster') }}
 
   <h5 id="Sketches">Sketches</h5>
   <p>A peek inside my sketchbook—see the thought process behind the works. Everything from early conceptual designs to quick 3D visualization renders to abandoned CAD creations. Emphasis on unfinished works that have only made it as far as the drawing board.</p>
-  {{- portfolio_image('/static/images/portfolio/sketches.jpg', 'Sketches', '#') }}
+  {{ portfolio_image('/static/images/portfolio/sketches.jpg', 'Sketches', '#') }}
 
   <br /><br />
 
 </div>
-{%- endblock %}
+{% endblock %}
 
 
 <!-- macro for portfolio link pieces -->
-{%- macro portfolio_image(imgURL, name, link) %}
+{% macro portfolio_image(imgURL, name, link) %}
 <div id="{{ name }}" class="portfolio-img" style="background: url('{{ imgURL }}');background-size:cover;background-position:center;">
   <a class="portfolio-img" href="{{ link }}">{{ name }}</a>
 </div>
-{%- endmacro %}
+{% endmacro %}

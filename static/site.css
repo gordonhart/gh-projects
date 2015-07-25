@@ -436,7 +436,7 @@ h1.gallery, h2.gallery {
 img.gallery-img {
   display: block;
   margin: 1rem auto;
-  width: calc(100% - 200px);
+  max-width: calc(100% - 200px);
   border-radius: 1rem; }
 
 img.gallery-full-img {

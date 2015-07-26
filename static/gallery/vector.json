@@ -1,0 +1,101 @@
+{
+	"name": "Vector",
+	"link": "vector",
+	"overview": "The vast majority of the design work that I do is done in vector images. The infinitely scalable, mathematically-perfect world is the ultimate playground for design.",
+	"images": [
+		{
+			"name": "Rippy & Scratchy",
+			"urls": [
+				"rippy/rippy_logo.png",
+				"rippy/rippy_shirt.png"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Contest-winning design for a popular music web community. Currently in print on a gray background in t-shirt and hooded sweatshirt format, as well as on white in t-shirt form, and on red in sticker form. Over 1,000 prints in circulation worldwide."
+			]
+		},
+		{
+			"name": "ASKMcGill",
+			"urls": [
+				"ask/ask_logo.png",
+				"ask/bookmark.png"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Branding and print design for the ASKMcGill web services released in the fall of 2014.",
+				"The service provides students a place to ask their questions and recieve answers about registration, move-in, courses, etc.",
+				"Designs are property of McGill University Student Services."
+			]
+		},
+		{
+			"name": "Frosh Prints",
+			"urls": [
+				"frosh/maze.jpg",
+				"frosh/sponsorship.jpg",
+				"frosh/calendar_cover.jpg",
+				"frosh/calendar_september.jpg"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Print designs for McGill's 2014 Frosh (orientation) week. Designs include handouts that would be included in each first-year's 'orientation packet', as well as the sponsorship packet circulated to Montreal businesses interested in contributing and promoting their brand during Frosh.",
+				"With over 5,000 first-year students arriving in late August, the following are my most widely circulated designs (to my knowledge).",
+				"The First-Year Calendar is a calendar circulated to all new students, containing important academic, social, and university-related dates to help get acclimated to student life at McGill. Each of the months represents a different section of McGill Student services, with each of the rainbow of colors seen on the cover corresponding to a different service.",
+				"All photographs contained above are property of McGill University. Designs were done under empoloyment at McGill Student Services Office of Campus Life and Engagement."
+			]
+		},
+		{
+			"name": "Castle Combat",
+			"urls": [
+				"castle_combat/template_blue.jpg",
+				"castle_combat/template_back.jpg",
+				"castle_combat/types.png"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Template design for the kid's trading/playing card game Castle Combat.",
+				"Shield Logo seen on back of card is not of my creation. Filled-out template with character and information is not available due to copyright permissions. All designs are property of KidRealm Camps."
+			]
+		},
+		{
+			"name": "Engineering Undergraduate Society (EUS)",
+			"urls": [
+				"EUS/sports_ring.png",
+				"EUS/ssf.jpg",
+				"EUS/star.jpg"
+			],
+			"medium": "Adobe Illustrator, Blender 3D",
+			"description": [
+				"Branding for various organizations under the umbrella organization of the McGill Engineering Undergraduate Society.",
+				"The ring featured in two of the above designs is the famed Iron Ring given to each engineer upon graduation from a Canadian engineering program. The <a class=\"regular\" href=\"https://en.wikipedia.org/wiki/Iron_Ring\">Iron Ring</a> symbolizes an engineer's obligation to his or her society to uphold a high standard of professional conduct",
+				"The star design is intended for print on the back of a denim jacket that will be available to all members of the Faculty of Enginering at McGill for all years to come."
+			]
+		},
+		{
+			"name": "Plumber's Ledger",
+			"urls": [
+				"Ledger/handshake-color.gif",
+				"Ledger/fingerprint.jpg",
+				"Ledger/demilitarize.jpg"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Selected illustrations done in 2014 for the Engineering Undergraduate Society's monthly publication The Plumber's Ledger.",
+				"Top: 'Handshake' - accompanying a piece investigating the potential foul play behind the 2022 FIFA World Cup to be held in Qatar. Image depicts the president of FIFA (Blatter) recieving a Canadian $20 bill from a Qatari official. Little did we know that a year later, the scandal would be brought out into the open in such a spectacular fashion.",
+				"Middle: 'Fingerprint' - paired with an article on Apple's fingerprint authentification technology, back when it first came out in 2014.",
+				"Bottom: 'Demilitarize' - accompanying an interview with 'Demilitarize McGill', a group that seeks to stop any and all research that may in some way be used for military purposes. Being an engineering publication, you can imagine how well that interview went..."
+			]
+		},
+		{
+			"name": "Vector Realism",
+			"urls": [
+				"realism/ipod.gif",
+				"realism/apple.jpg",
+				"realism/alarm.png"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"A couple of attempts at photorealism using only vectors."
+			]
+		}
+	]
+}

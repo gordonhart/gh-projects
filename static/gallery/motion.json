@@ -1,12 +1,31 @@
 {
 	"name": "Motion",
 	"link": "motion",
-	"items": [
+	"overview": "This section of the portfolio includes designs that move. Some of the pixel images can also be found in the <a class=\"regular\" href=\"/portfolio/gallery/raster\">Raster</a> section.",
+	"images": [
 		{
-			"name": "motion",
-			"extension": "jpg",
+			"name": "Campus Life and Engagement Videos",
+			"urls": [],
+			"medium": "Blender 3D, Adobe Illustrator",
 			"description": [
-				"Motion"
+				"Short animations for the McGill Office of Campus Life and Engagement (CL&E).",
+				"<div><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/3eK3EUy9BxI\" frameborder=\"0\" allowfullscreen></iframe></div>",
+				"Above is a brief logo animation intended for use at the beginning or end of the videos circulated by the office.",
+				"The second animation is a 30-second 'advertisement' for CL&E to be shown on various TV screens around campus, among other places. A soundtrack is currently in production by a Music Production graduate student at McGill's Schulich School of Music."
+			]
+		},
+		{
+			"name": "Pixel Sprites",
+			"urls": [
+				"sprites/rippy.gif",
+				"sprites/pixelfox.gif",
+				"sprites/rebel-alt.gif",
+				"sprites/cop-baton.gif",
+				"sprites/rebel-biker.gif"
+			],
+			"medium": "Adobe Illustrator, Photoshop, After Effects",
+			"description": [
+				"Sprites created in the image of old 16-bit video games."
 			]
 		}
 	]

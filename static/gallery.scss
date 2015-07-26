@@ -1,0 +1,18 @@
+/*
+CSS for the gallery section of the website. Uses the "gallery" module
+and the auto-hiding "nav_hidden" module.
+
+Order of the imports in this file is VERY important. Do not change without a reason.
+*/
+
+/* COMMONLY USED MIXINS */
+@import "sass_partials/colors-fonts";
+@import "sass_partials/mixins";
+
+/* STRUCTURAL COMPONENTS */
+@import "sass_partials/nav_hidden"; /* bottom nav button stylings */
+@import "sass_partials/bar"; /* programming language proficiency bar stylings */
+@import "sass_partials/main";
+
+/* ELEMENTS NECESSARY FOR GALLERY */
+@import "sass_partials/gallery";

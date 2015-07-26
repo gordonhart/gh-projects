@@ -2,9 +2,15 @@
 The main CSS file is compiled entirely of submodules. This approach allows for 
 easy swapping in and out of features in the event that I want to use different
 CSS files for different areas of the website.
+
+Order of the imports in this file is VERY important. Do not change without a reason.
 */
 
-@import "sass_partials/main";
+/* COMMONLY USED MIXINS */
+@import "sass_partials/colors-fonts";
+@import "sass_partials/mixins";
+
+/* STRUCTURAL COMPONENTS */
 @import "sass_partials/nav"; /* bottom nav button stylings */
 @import "sass_partials/bar"; /* programming language proficiency bar stylings */
-@import "sass_partials/gallery";
+@import "sass_partials/main";

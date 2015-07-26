@@ -1,5 +1,16 @@
-@import "colors-fonts";
-@import "mixins";
+/* CSS necessary for Gallery view */
+
+main { /* override default "main" block held in the "_main" partial */
+	width: 100%;
+	min-width: 800px; 
+	
+	height: 100%; /* this works !!!!! */
+
+	margin: 0;
+	padding: 0;
+
+	text-align: center;	
+}
 
 #overlay {
 	height: 100%;
@@ -28,6 +39,7 @@ img.gallery-img {
 	margin: 1rem auto;
 
 	max-width: calc(100% - 200px);
+	max-height: calc(100% - 65px);
 
 	border-radius: 1rem;
 }
@@ -36,7 +48,9 @@ img.gallery-full-img {
 	display: block;
 
 	margin: 75px auto 25px auto;
-	height: calc(100% - 150px);
+	
+	max-height: calc(100% - 150px); 
+	max-width: 95%;
 }
 
 span.label {
@@ -55,4 +69,11 @@ a.spotlight {
 	&:active, &:hover {
 		color: $light;
 	}
+}
+
+.endblock {
+	height: 70px;
+	padding-top: 1rem;
+
+	display: block;
 }

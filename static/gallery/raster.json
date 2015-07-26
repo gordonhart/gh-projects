@@ -19,7 +19,8 @@
 			"description": [
 				"The fact that you have an internet connection means that you've probably seen the otherworldly 'dream' images that have been circulating around since the summer of 2015. Thanks to some of the researchers at Google, the world has gotten to see the inner workings of Deep Learning image recongnition software systems.",
 				"As soon as I saw the capabilities I knew that I had to try my hand at 'Deepdreaming' images. Turning anything and everything into dogs, cars, and pagodas (the images of which you've surely seen) gets old really, really quickly. However, dig a little deeper (pun intended) and you'll find that Deepdream is capable of far more artistically interesting images.",
-				"My favorite effect was achieved by stopping the image processing very early on—immediately after the first pass of edge detection. The computer's attempt to break down objects into streaks looks strikingly familiar..."
+				"My favorite effect was achieved by stopping the image processing very early on—immediately after the first pass of edge detection. The computer's attempt to break down objects into streaks looks strikingly familiar...",
+				"(Note: the raw images for the Pillars of Creation or the orange Uranium Mine are not originals)"
 			]
 		},
 		{
@@ -32,12 +33,11 @@
 				"fe-sprites/cop-drone.gif",
 				"fe-sprites/cop-baton.gif"
 			],
-			"medium": "Adobe Photoshop",
+			"medium": "Adobe Photoshop, After Effects",
 			"description": [
 				"Anybody who's played the Fire Emblem series will immediately recognize the stylistic influences here. For the uninitiated, Fire Emblem is a wonderful and ongoing series of turn-based strategy games on Nintendo platforms.",
-				"Ever since I realized that it would be possible to make a similar game, it's been on my to-do list. I've only gotten as far as the conceptual design phase, and these sprites are some of the proposed characters. Set sometime in the future, the main conflict is between the totalitarian, technologically advanced, and armed to the teeth police force and the nitty gritty neo-rebel good guys."
-			],
-			"size": "120px"
+				"Ever since I realized that it would be possible to make a similar game, it's been on my to-do list. I've only gotten as far as the conceptual design phase, and these sprites are some of the proposed characters. Set sometime in the future, the main conflict is between the totalitarian, technologically advanced, and armed to the teeth police force and the gritty neo-rebel good guys."
+			]
 		},
 		{
 			"name": "Avatar",
@@ -54,15 +54,15 @@
 			"name": "Pixel Fox",
 			"urls": [
 				"pixelfox/pixelfox.gif",
-				"pixelfox/1.png",
-				"pixelfox/2.png",
-				"pixelfox/3.png",
-				"pixelfox/4.png",
-				"pixelfox/5.png",
-				"pixelfox/6.png",
-				"pixelfox/7.png"
+				"pixelfox/fox_1.png",
+				"pixelfox/fox_2.png",
+				"pixelfox/fox_3.png",
+				"pixelfox/fox_4.png",
+				"pixelfox/fox_5.png",
+				"pixelfox/fox_6.png",
+				"pixelfox/fox_7.png"
 			],
-			"medium": "Adobe Photoshop",
+			"medium": "Adobe Photoshop, After Effects",
 			"description": [
 				"Another attempt at pixel art—this time modeled directly after the character Fox from Super Smash Bros. on the Nintendo 64."
 			]

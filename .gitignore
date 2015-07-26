@@ -4,3 +4,4 @@ venv
 heroku_notes.txt
 
 static/*.css.map
+*.css.map

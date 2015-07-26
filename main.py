@@ -70,7 +70,9 @@ def contact():
 @app.route('/about/why_robots')
 def whyRobots():
 	fromTo = getLocs(1)
-	return render_template('subpages/why_robots.html', locs=fromTo, active='about')
+
+	crumbs = ['about', 'why_robots']
+	return render_template('subpages/why_robots.html', locs=fromTo, active='about', crumblist=crumbs)
 
 
 @app.route('/portfolio/gallery/<gallery>') # dynamic path to different galleries
@@ -83,11 +85,10 @@ def gallery(gallery='full'):
 	gallery_text = gallery_file.read()
 	gallery_file.close()
 	
-	gallery_text = json.loads(gallery_text) # parse JSON file as text
+	gallery_dict = json.loads(gallery_text) # parse JSON file as text
 
-#	return render_template('portfolio/gallery.html', locs=fromTo, active='portfolio', css="dark.css")
-#	custom CSS can be defined, but I no longer have any use for it....
-	return render_template('portfolio/gallery.html', locs=fromTo, active='portfolio', gallery=gallery_text)
+	crumbs = ['portfolio', gallery]
+	return render_template('subpages/gallery.html', locs=fromTo, active='portfolio', gallery=gallery_dict, css="gallery.css", crumblist=crumbs)
 
 
 # RUN =======================================================================================

@@ -1,0 +1,13 @@
+{# macro for giving 'breadcrumb' trail facing back into site #}
+{% macro trace(traceback) %}
+
+{% set path = '' %}
+
+<div class="crumbblock">
+	{% for location in traceback %}
+	{% set path = path + '/' + location %}
+	{% if loop.index != 1 %} > {% endif %}<a class="regular" href="{{ path }}">{{ location }}</a>
+	{% endfor %}
+</div>
+
+{% endmacro %}

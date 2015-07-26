@@ -1,0 +1,44 @@
+{
+	"name": "3D",
+	"link": "3D",
+	"overview": "This section of the portfolio includes 3D designs of all shapes and sizes: mostly 3D renders using the Blender open-source modelling software with the Cycles renderer.",
+	"images": [
+		{
+			"name": "Digi-Brau",
+			"urls": [
+				"brau/68_brewery.jpg",
+				"brau/digi.jpg"
+			],
+			"medium": "Blender 3D, Adobe Illustrator",
+			"description": [
+				"Conceptual product rendering for 6/8 Brewery, along with some pale ale greenbottle 'Digi-Brau'. Labels are both original designs.",
+				"Books seen on the countertop in the first image are from Andrew Price's Blender Guru free-use <a class=\"regular\" href=\"http://www.thearchitectureacademy.com/sq/38881-starter-pack\">Starter Architectural Package</a>. Countertop and other textures sourced from <a class=\"regular\" href=\"http://www.cgtextures.com\">CG Textures</a>."
+			]
+		},
+		{
+			"name": "Cubefield",
+			"urls": [
+				"cubefield.jpg"
+			],
+			"medium": "Blender 3D",
+			"description": [
+				"Inspired by the drive up to Manhattan on the New Jersey Turnpike, Cubefield is meant to evoke thoughts of a sprawling futuristic metropolis. This city at once captures the chaos associated with modern cities and the clinical, cold, cleanliness that one would expect in an operating room or on an interplanetary space liner fresh off of the assembly line."
+			]
+		},
+		{
+			"name": "Swordfish",
+			"urls": [
+				"swordfish/1_aerial.jpg",
+				"swordfish/2_front.jpg",
+				"swordfish/3_rear.jpg",
+				"swordfish/4_diagonal.jpg",
+				"swordfish/5_shoulder.jpg"
+			],
+			"medium": "Blender 3D, Adobe Photoshop",
+			"description": [
+				"You might recognize this ship from the cartoon Cowboy Bebop. A science-fiction 26-episode series about solar system cowboys, the main character's ship seemed like the perfect project to teach myself Blender and 3D modelling.",
+				"All textures, materials, and models are original works."
+			]
+		}
+	]
+}

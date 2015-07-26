@@ -1,7 +1,9 @@
 {% extends 'layout.html' %}
+{% import 'macros/breadcrumbs.html' as crumbs %}
 
 {% block content %}
 <div id="content-section">
+  {{ crumbs.trace(crumblist) }}
 
   <h1 class="gallery"><span class="label">Gallery | </span>{{ gallery.name }}</h1>
 
@@ -14,12 +16,12 @@
   <p><span class="label">Medium | </span>{{ image.medium }}</p>
 
   {% for sentence in image.description %}
-  <p>{{ sentence }}</p>
+  <p>{% if loop.index == 1 %}<span class="label">About | </span>{% endif %}{{ sentence }}</p>
   {% endfor %}
 
   {% for url in image.urls %}
-  <img class="gallery-img" {% if image.size is defined %}style="width:{{ image.size }} !important; border-radius: 0px !important;"{% endif %} src="/static/gallery/{{ gallery.link }}/{{ url }}" />
-  <a class="spotlight" href="#{{ cur_index }}" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');">view image fullscreen</a>
+  <img class="gallery-img" src="/static/gallery/{{ gallery.link }}/{{ url }}" />
+  <a class="spotlight" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');">view image fullscreen</a>
   {% endfor %}
 
   <br /><br />
@@ -36,8 +38,7 @@
   <br />
   {% endfor %}
   
-  <br /><br />
-
+  <div class="endblock"></div>
 </div>
 
 <div id="overlay">

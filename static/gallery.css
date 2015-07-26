@@ -1,7 +1,6 @@
-/* 
-The main CSS file is compiled entirely of submodules. This approach allows for 
-easy swapping in and out of features in the event that I want to use different
-CSS files for different areas of the website.
+/*
+CSS for the gallery section of the website. Uses the "gallery" module
+and the auto-hiding "nav_hidden" module.
 
 Order of the imports in this file is VERY important. Do not change without a reason.
 */
@@ -50,12 +49,33 @@ footer {
   margin-left: auto;
   margin-right: auto;
   padding: 10px 10px 10px 10px;
-  position: relative;
+  position: fixed;
+  display: block;
   text-align: center;
   color: #222222;
   background: #720000;
-  height: 50px; }
+  bottom: 0;
+  left: -10px;
+  /* not ideal, to compensate for auto padding */
+  width: 100%;
+  height: 50px;
+  opacity: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  animation: slide-out 1.0s;
+  -webkit-animation: slide-out 1.0s;
+  -moz-animation: slide-out 1.0s; }
+  footer:hover {
+    opacity: 1.0; }
 
+@keyframes slide-out {
+  from {
+    transform: translateY(0px);
+    opacity: 1.0; }
+  to {
+    transform: translateY(70px);
+    opacity: 1.0; } }
 #sticky-element {
   width: 100%;
   height: auto;
@@ -395,4 +415,64 @@ a.portfolio-img {
     background: rgba(34, 34, 34, 0.5);
     color: #f8f8f8; }
 
-/*# sourceMappingURL=site.css.map */
+/* ELEMENTS NECESSARY FOR GALLERY */
+/* CSS necessary for Gallery view */
+main {
+  /* override default "main" block held in the "_main" partial */
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  /* this works !!!!! */
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+
+#overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0.0;
+  z-index: -1;
+  /* behind the main content block until pulled up */ }
+
+h1.gallery, h2.gallery {
+  font-family: "Rad-Light"; }
+
+img.gallery-img {
+  display: block;
+  margin: 1rem auto;
+  max-width: calc(100% - 200px);
+  max-height: calc(100% - 65px);
+  border-radius: 1rem; }
+
+img.gallery-full-img {
+  display: block;
+  margin: 75px auto 25px auto;
+  max-height: calc(100% - 150px);
+  max-width: 95%; }
+
+span.label {
+  font-family: "Mono-Bold";
+  color: #F8F8F8; }
+
+a.spotlight {
+  font-size: 0.75rem;
+  font-family: "Mono-Bold";
+  color: #DDDDDD;
+  text-decoration: none;
+  cursor: pointer; }
+  a.spotlight:active, a.spotlight:hover {
+    color: #F8F8F8; }
+
+.endblock {
+  height: 70px;
+  padding-top: 1rem;
+  display: block; }
+
+/*# sourceMappingURL=gallery.css.map */

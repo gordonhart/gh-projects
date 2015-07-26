@@ -6,7 +6,13 @@
 <div class="crumbblock">
 	{% for location in traceback %}
 	{% set path = path + '/' + location %}
+
+	{% if not loop.last %}
 	{% if loop.index != 1 %} > {% endif %}<a class="regular" href="{{ path }}">{{ location }}</a>
+	{% else %}
+	> {{ location }}
+	{% endif %}
+
 	{% endfor %}
 </div>
 

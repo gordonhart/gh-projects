@@ -1,0 +1,34 @@
+{
+	"name": "Sketches",
+	"link": "sketches",
+	"overview": "Everything from early conceptual designs to quick 3D visualization renders to testing documents to abandoned CAD creations.",
+	"images": [
+		{
+			"name": "Planar Arm",
+			"date": "Fall 2014",
+			"urls": [
+				"arm/curl.png",
+				"arm/upright.png",
+				"arm/bend.png"
+			],
+			"medium": "SolidWorks",
+			"description": [
+				"An unfortunately abandoned CAD model for a 5-DOF robotic arm driven by stepper motors. Derived from the first iteration design for the Wrist Unit I was working on for McGill Robotics."
+			]
+		},
+		{
+			"name": "MachineWriting Notebook",
+			"date": "Fall 2014",
+			"urls": [
+				"writer/1.jpg",
+				"writer/2.jpg",
+				"writer/3.jpg",
+				"writer/4.jpg"
+			],
+			"medium": "CNC Machine",
+			"description": [
+				"Some of the pages from the design process for the MachineWriting project. These pages outline the process of tuning and tweaking the settings and doing the first round of optimization."
+			]
+		}
+	]
+}

@@ -45,17 +45,30 @@ img.gallery-img {
 }
 
 img.gallery-full-img {
-	display: block;
+	display: inline-block;
+	cursor: pointer;
 
-	margin: 75px auto 25px auto;
+	margin: auto;
 	
-	max-height: calc(100% - 150px); 
-	max-width: 95%;
+	max-height: calc(100% - 50px); 
+	max-width: calc(100% - 50px);
+
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right:0;
+	position: absolute;
 }
 
 span.label {
 	font-family: "Mono-Bold";
 	color: $light;
+}
+
+span.date {
+	font-family: "Rad-Light";
+	color: $light;	
+	float: right;
 }
 
 a.spotlight {

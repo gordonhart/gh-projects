@@ -5,6 +5,7 @@
 	"images": [
 		{
 			"name": "Rippy & Scratchy",
+			"date": "Spring 2014",
 			"urls": [
 				"rippy/rippy_logo.png",
 				"rippy/rippy_shirt.png"
@@ -16,6 +17,7 @@
 		},
 		{
 			"name": "ASKMcGill",
+			"date": "Summer 2014",
 			"urls": [
 				"ask/ask_logo.png",
 				"ask/bookmark.png"
@@ -29,6 +31,7 @@
 		},
 		{
 			"name": "Frosh Prints",
+			"date": "Summer 2014",
 			"urls": [
 				"frosh/maze.jpg",
 				"frosh/sponsorship.jpg",
@@ -45,6 +48,7 @@
 		},
 		{
 			"name": "Castle Combat",
+			"date": "2014 - 2015",
 			"urls": [
 				"castle_combat/template_blue.jpg",
 				"castle_combat/template_back.jpg",
@@ -58,6 +62,7 @@
 		},
 		{
 			"name": "Engineering Undergraduate Society (EUS)",
+			"date": "Spring 2015",
 			"urls": [
 				"EUS/sports_ring.png",
 				"EUS/ssf.jpg",
@@ -72,6 +77,7 @@
 		},
 		{
 			"name": "Plumber's Ledger",
+			"date": "Fall 2014",
 			"urls": [
 				"Ledger/handshake-color.gif",
 				"Ledger/fingerprint.jpg",
@@ -87,6 +93,7 @@
 		},
 		{
 			"name": "Vector Realism",
+			"date": "Fall 2013",
 			"urls": [
 				"realism/ipod.gif",
 				"realism/apple.jpg",

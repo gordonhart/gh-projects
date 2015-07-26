@@ -5,6 +5,7 @@
 	"images": [
 		{
 			"name": "Digi-Brau",
+			"date": "Summer 2014",
 			"urls": [
 				"brau/68_brewery.jpg",
 				"brau/digi.jpg"
@@ -17,6 +18,7 @@
 		},
 		{
 			"name": "Cubefield",
+			"date": "Spring 2015",
 			"urls": [
 				"cubefield.jpg"
 			],
@@ -27,6 +29,7 @@
 		},
 		{
 			"name": "Swordfish",
+			"date": "Summer 2014",
 			"urls": [
 				"swordfish/1_aerial.jpg",
 				"swordfish/2_front.jpg",

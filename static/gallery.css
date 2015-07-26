@@ -452,14 +452,25 @@ img.gallery-img {
   border-radius: 1rem; }
 
 img.gallery-full-img {
-  display: block;
-  margin: 75px auto 25px auto;
-  max-height: calc(100% - 150px);
-  max-width: 95%; }
+  display: inline-block;
+  cursor: pointer;
+  margin: auto;
+  max-height: calc(100% - 50px);
+  max-width: calc(100% - 50px);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute; }
 
 span.label {
   font-family: "Mono-Bold";
   color: #F8F8F8; }
+
+span.date {
+  font-family: "Rad-Light";
+  color: #F8F8F8;
+  float: right; }
 
 a.spotlight {
   font-size: 0.75rem;

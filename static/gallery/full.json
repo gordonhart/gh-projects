@@ -1,26 +1,95 @@
 {
 	"name": "Full",
 	"link": "full",
-	"overview": "Full design portfolio. Enjoy your stay!",
+	"overview": "Complete design portfolio. Elements from each subsection.",
 	"images": [
 		{
-			"name": "Lot",
+			"name": "Rippy & Scratchy",
+			"date": "Spring 2014",
 			"urls": [
-				"test.jpg"
+				"../vector/rippy/rippy_logo.png",
+				"../vector/rippy/rippy_shirt.png"
 			],
-			"medium": "Google Deepdream Deep Learning Image Processing, Adobe Photoshop",
+			"medium": "Adobe Illustrator",
 			"description": [
-				"Deepdream image with the using the with google deepdream streaks effect. Part of a series in images that were created to be images for the sake of printing and doing other image like things. They are images and that is all that they are you know."
+				"Contest-winning design for a popular music web community. Currently in print on a gray background in t-shirt and hooded sweatshirt format, as well as on white in t-shirt form, and on red in sticker form. Over 1,000 prints in circulation worldwide."
 			]
 		},
 		{
-			"name": "Beer",
+			"name": "Digi-Brau",
+			"date": "Summer 2014",
 			"urls": [
-				"second.jpg"
+				"../3D/brau/68_brewery.jpg",
+				"../3D/brau/digi.jpg"
 			],
-			"medium": "Google Deepdream Deep Learning Image Processing, Adobe Photoshop",
+			"medium": "Blender 3D, Adobe Illustrator",
 			"description": [
-				"this is the second image"
+				"Conceptual product rendering for 6/8 Brewery, along with some pale ale greenbottle 'Digi-Brau'. Labels are both original designs.",
+				"Books seen on the countertop in the first image are from Andrew Price's Blender Guru free-use <a class=\"regular\" href=\"http://www.thearchitectureacademy.com/sq/38881-starter-pack\">Starter Architectural Package</a>. Countertop and other textures sourced from <a class=\"regular\" href=\"http://www.cgtextures.com\">CG Textures</a>."
+			]
+		},
+		{
+			"name": "Frosh Prints",
+			"date": "Summer 2014",
+			"urls": [
+				"../vector/frosh/maze.jpg",
+				"../vector/frosh/sponsorship.jpg",
+				"../vector/frosh/calendar_cover.jpg",
+				"../vector/frosh/calendar_september.jpg"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Print designs for McGill's 2014 Frosh (orientation) week. Designs include handouts that would be included in each first-year's 'orientation packet', as well as the sponsorship packet circulated to Montreal businesses interested in contributing and promoting their brand during Frosh.",
+				"With over 5,000 first-year students arriving in late August, the following are my most widely circulated designs (to my knowledge).",
+				"The First-Year Calendar is a calendar circulated to all new students, containing important academic, social, and university-related dates to help get acclimated to student life at McGill. Each of the months represents a different section of McGill Student services, with each of the rainbow of colors seen on the cover corresponding to a different service.",
+				"All photographs contained above are property of McGill University. Designs were done under empoloyment at McGill Student Services Office of Campus Life and Engagement."
+			]
+		},
+		{
+			"name": "Deepdream Impressionism",
+			"date": "Summer 2015",
+			"urls": [
+				"../raster/deepdream/green_alley.jpg",
+				"../raster/deepdream/lot.jpg",
+				"../raster/deepdream/pillars.jpg",
+				"../raster/deepdream/train.jpg",
+				"../raster/deepdream/dumpster.jpg"
+			],
+			"medium": "Google's Deepdream Deep Learning Image Processing Software, Adobe Photoshop",
+			"description": [
+				"The fact that you have an internet connection means that you've probably seen the otherworldly 'dream' images that have been circulating around since the summer of 2015. Thanks to some of the researchers at Google, the world has gotten to see the inner workings of Deep Learning image recongnition software systems.",
+				"As soon as I saw the capabilities I knew that I had to try my hand at 'Deepdreaming' images. Turning anything and everything into dogs, cars, and pagodas (the images of which you've surely seen) gets old really, really quickly. However, dig a little deeper (pun intended) and you'll find that Deepdream is capable of far more artistically interesting images.",
+				"My favorite effect was achieved by stopping the image processing very early on—immediately after the first pass of edge detection. The computer's attempt to break down objects into streaks looks strikingly familiar...",
+				"(Note: the raw images for the Pillars of Creation or the orange Uranium Mine are not originals)"
+			]
+		},
+		{
+			"name": "Campus Life and Engagement Videos",
+			"date": "Early 2015",
+			"urls": [],
+			"medium": "Blender 3D, Adobe Illustrator",
+			"description": [
+				"Short animations for the McGill Office of Campus Life and Engagement (CL&E).",
+				"<div><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/3eK3EUy9BxI\" frameborder=\"0\" allowfullscreen></iframe></div>",
+				"Above is a brief logo animation intended for use at the beginning or end of the videos circulated by the office.",
+				"<div><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/3euunwWh584\" frameborder=\"0\" allowfullscreen></iframe></div>",
+				"The second animation is a 30-second 'advertisement' for CL&E to be shown on various TV screens around campus, among other places. A soundtrack is currently in production by a Music Production graduate student at McGill's Schulich School of Music."
+			]
+		},
+		{
+			"name": "Swordfish",
+			"date": "Summer 2014",
+			"urls": [
+				"../3D/swordfish/1_aerial.jpg",
+				"../3D/swordfish/2_front.jpg",
+				"../3D/swordfish/3_rear.jpg",
+				"../3D/swordfish/4_diagonal.jpg",
+				"../3D/swordfish/5_shoulder.jpg"
+			],
+			"medium": "Blender 3D, Adobe Photoshop",
+			"description": [
+				"You might recognize this ship from the cartoon Cowboy Bebop. A science-fiction 26-episode series about solar system cowboys, the main character's ship seemed like the perfect project to teach myself Blender and 3D modelling.",
+				"All textures, materials, and models are original works."
 			]
 		}
 	]

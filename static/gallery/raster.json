@@ -5,6 +5,7 @@
 	"images": [
 		{
 			"name": "Deepdream Impressionism",
+			"date": "Summer 2015",
 			"urls": [
 				"deepdream/green_alley.jpg",
 				"deepdream/mine.jpg",
@@ -25,6 +26,7 @@
 		},
 		{
 			"name": "RPG Sprite Set",
+			"date": "Summer 2014",
 			"urls": [
 				"fe-sprites/rebel.gif",
 				"fe-sprites/rebel-biker.gif",
@@ -41,6 +43,7 @@
 		},
 		{
 			"name": "Avatar",
+			"date": "Late 2014",
 			"urls": [
 				"headshot.jpeg"
 			],
@@ -52,6 +55,7 @@
 		},
 		{
 			"name": "Pixel Fox",
+			"date": "Spring 2014",
 			"urls": [
 				"pixelfox/pixelfox.gif",
 				"pixelfox/fox_1.png",

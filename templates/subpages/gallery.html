@@ -2,7 +2,13 @@
 {% import 'macros/breadcrumbs.html' as crumbs %}
 
 {% block content %}
-<div id="content-section">
+<div id="gallery-hover"></div>
+
+
+<div id="gallery-side"></div><!-- need to do this to get rid of small gap between divs...
+
+--><div id="gallery-main"> 
+<!-- to switch back to the old working verion, change this to "content-section" and get rid of the "gallery-side" div -->
   {{ crumbs.trace(crumblist) }}
 
   <h1 class="gallery"><span class="label">Gallery | </span>{{ gallery.name }}</h1>
@@ -20,8 +26,8 @@
   {% endfor %}
 
   {% for url in image.urls %}
-  <img class="gallery-img" src="/static/gallery/{{ gallery.link }}/{{ url }}" />
-  <a class="spotlight" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');">view image fullscreen</a>
+  <img class="gallery-img" src="/static/gallery/{{ gallery.link }}/{{ url }}" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');" />
+<!--   <a class="spotlight" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');">view image fullscreen</a> -->
   {% endfor %}
 
   <br /><br />

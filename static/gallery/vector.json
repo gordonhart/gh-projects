@@ -16,20 +16,6 @@
 			]
 		},
 		{
-			"name": "ASKMcGill",
-			"date": "Summer 2014",
-			"urls": [
-				"ask/ask_logo.png",
-				"ask/bookmark.png"
-			],
-			"medium": "Adobe Illustrator",
-			"description": [
-				"Branding and print design for the ASKMcGill web services released in the fall of 2014.",
-				"The service provides students a place to ask their questions and recieve answers about registration, move-in, courses, etc.",
-				"Designs are property of McGill University Student Services."
-			]
-		},
-		{
 			"name": "Frosh Prints",
 			"date": "Summer 2014",
 			"urls": [
@@ -47,6 +33,20 @@
 			]
 		},
 		{
+			"name": "Brown Building Map",
+			"date": "Summer 2014",
+			"urls": [
+				"brown_building/poster.png",
+				"brown_building/iss.png"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Map for the Brown Student Services building on McGill's downtown Montreal campus.",
+				"Influenced by 3D exploded view maps of malls, stations, and other such large buildings.",
+				"Informational graphic for the International Student Services Office, and map printout to post in the lobby of the building."
+			]
+		},
+		{
 			"name": "Castle Combat",
 			"date": "2014 - 2015",
 			"urls": [
@@ -58,6 +58,20 @@
 			"description": [
 				"Template design for the kid's trading/playing card game Castle Combat.",
 				"Shield Logo seen on back of card is not of my creation. Filled-out template with character and information is not available due to copyright permissions. All designs are property of KidRealm Camps."
+			]
+		},
+		{
+			"name": "ASKMcGill",
+			"date": "Summer 2014",
+			"urls": [
+				"ask/ask_logo.png",
+				"ask/bookmark.png"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Branding and print design for the ASKMcGill web services released in the fall of 2014.",
+				"The service provides students a place to ask their questions and recieve answers about registration, move-in, courses, etc.",
+				"Designs are property of McGill University Student Services."
 			]
 		},
 		{

@@ -265,7 +265,7 @@ a.regular {
   margin-left: auto;
   margin-right: auto;
   width: 75%;
-  height: 100%;
+  height: 4rem;
   background: rgba(34, 34, 34, 0);
   color: #DDDDDD;
   /*	padding-top:2rem; */
@@ -276,9 +276,10 @@ a.regular {
   transition: 1s;
   -webkit-transition: 1s;
   -moz-transition: 1s;
-  transform: translateY(calc(-100% + 5rem)); }
+  /*	transform: translateY(calc(-100% + 5rem)); */ }
   #title-text:hover {
-    transform: translateY(0);
+    /*		transform: translateY(0); */
+    height: 100%;
     background: rgba(34, 34, 34, 0.75);
     color: #F8F8F8; }
 
@@ -340,14 +341,17 @@ p.project-blurb {
   padding-bottom: 1rem;
   margin-bottom: 3rem; }
 
+/*
 h3.title-bottom {
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  bottom: 0.5rem;
-  left: 0;
-  right: 0; }
+	@include auto_margin;
 
+	position:absolute;
+
+	bottom:0.5rem; 
+	left:0;
+	right:0;
+}
+*/
 span.codeblock {
   color: #FFFFFF;
   width: 100%;
@@ -422,11 +426,52 @@ main {
   width: 100%;
   min-width: 800px;
   height: 100%;
-  /* this works !!!!! */
   margin: 0;
   padding: 0;
   text-align: center; }
 
+#gallery-main {
+  /*	@include auto_margin; */
+  margin: 0;
+  display: inline-block;
+  width: 875px;
+  height: 100%;
+  background: rgba(34, 34, 34, 0.75);
+  color: #F8F8F8;
+  /*	padding-bottom: 4rem; */
+  overflow: scroll;
+  animation: transition-in 1.5s;
+  -webkit-animation: transition-in 1.5s;
+  -moz-animation: transition-in 1.5s; }
+
+#gallery-side {
+  margin: 0;
+  display: inline-block;
+  /*	width: 175px; */
+  width: 875px;
+  height: 100%;
+  zoom: 0.2;
+  cursor: pointer;
+  background: rgba(34, 34, 34, 0.9);
+  color: #F8F8F8;
+  overflow: scroll;
+  animation: transition-in 1.5s;
+  -webkit-animation: transition-in 1.5s;
+  -moz-animation: transition-in 1.5s; }
+
+#gallery-hover {
+  position: fixed;
+  left: calc(50% - 525px);
+  width: 175px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.25); }
+
+@keyframes transition-in {
+  from {
+    opacity: 0;
+    /* this is the smoothest transition, so it wins this round */ }
+  to {
+    opacity: 1; } }
 #overlay {
   height: 100%;
   width: 100%;
@@ -446,9 +491,10 @@ h1.gallery, h2.gallery {
 
 img.gallery-img {
   display: block;
-  margin: 1rem auto;
+  margin: 3rem auto auto auto;
+  cursor: pointer;
   max-width: calc(100% - 200px);
-  max-height: calc(100% - 65px);
+  max-height: calc(100% - 200px);
   border-radius: 1rem; }
 
 img.gallery-full-img {

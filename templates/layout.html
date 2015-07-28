@@ -26,12 +26,16 @@ Traverse at your own risk.
 
     <script type="text/javascript" src="/static/js/focus.js"></script>
     <script type="text/javascript" src="/static/js/mobile_redirect.js"></script>
+    <script type="text/javascript" src="/static/js/gallery_sidebar.js"></script>
+
+    <!-- MAY NOT NEED TO KEEP THIS -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     {# pass the location attributes on to the background slider #}
     {{ bg.slide(locs.from, locs.to) }}
   </head>
     
-  <body>
+  <body {% if css == 'gallery.css' %}onload="construct_gallery()"{% endif %}>
     <div id="bg"> <!-- div for animated background -->
     
       <main>

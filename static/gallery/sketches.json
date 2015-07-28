@@ -29,6 +29,76 @@
 			"description": [
 				"Some of the pages from the design process for the MachineWriting project. These pages outline the process of tuning and tweaking the settings and doing the first round of optimization."
 			]
+		},
+		{
+			"name": "SSMU Ski and Snowboard Club",
+			"date": "Winter 2015",
+			"urls": [
+				"ssmuski.jpg"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Entry to the 2014-15 season ski and snowboard club apparel design contest. Never printed; beaten in this contest by a remake of the familar face of the Pabst Blue Ribbon can with SSMUSKI written on the label."
+			]
+		},
+		{
+			"name": "Nu, Pogodi! Traces",
+			"date": "Summer 2014",
+			"urls": [
+				"nu_pogodi.png"
+			],
+			"medium": "Adobe Illustrator, Wacom Tablet",
+			"description": [
+				"Traced sketch from the Societ take on Tom and Jerry."
+			]
+		},
+		{
+			"name": "Flybrake",
+			"date": "Fall 2013",
+			"urls": [
+				"flybrake.png"
+			],
+			"medium": "Adobe Illustrator, Wacom Tablet",
+			"description": [
+				"Fake Business Proposal cover for a fake Business built around a piece of technology that doesn't exist yet."
+			]
+		},
+		{
+			"name": "Glitches",
+			"date": "Fall 2013",
+			"urls": [
+				"glitch/mine.jpg",
+				"glitch/dymaxion.png"
+			],
+			"medium": "Hexadecimal Editor",
+			"description": [
+				"The name describes it perfectly: Glitch Art.",
+				"Made by quite literally deleting chunks of (presumably relevant) byte sequences from images of various different formats, mainly '.tiff' due to its robust nature.",
+				"None of the source images are original."
+			]
+		},
+		{
+			"name": "Isometric Vector Design",
+			"date": "Early 2014",
+			"urls": [
+				"isometric_v2.png"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Quite unfinished attemt to model my first-year dormitory room from an isometric view.",
+				"Yes the room was really that small. This model is roportionally accurate."
+			]
+		},
+		{
+			"name": "Virginia Square",
+			"date": "Summer 2013",
+			"urls": [
+				"station.png"
+			],
+			"medium": "Adobe Illustrator",
+			"description": [
+				"Quite unfinished wireframe of a cetain station on the Orange Line."
+			]
 		}
 	]
 }

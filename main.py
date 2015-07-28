@@ -91,6 +91,11 @@ def gallery(gallery='full'):
 	return render_template('subpages/gallery.html', locs=fromTo, active='portfolio', gallery=gallery_dict, css="gallery.css", crumblist=crumbs)
 
 
+@app.route('/mobile')
+def mobile_redirect():
+	return render_template('subpages/mobile.html')
+
+
 # RUN =======================================================================================
 
 if __name__ == '__main__':

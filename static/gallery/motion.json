@@ -10,9 +10,9 @@
 			"medium": "Blender 3D, Adobe Illustrator",
 			"description": [
 				"Short animations for the McGill Office of Campus Life and Engagement (CL&E).",
-				"<div><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/RZwVog5tq8k\" frameborder=\"0\" allowfullscreen></iframe></div>",
+				"<div class=\"no-side\"><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/RZwVog5tq8k\" frameborder=\"0\" allowfullscreen></iframe></div>",
 				"Above is a brief logo animation intended for use at the beginning or end of the videos circulated by the office.",
-				"<div><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/3euunwWh584\" frameborder=\"0\" allowfullscreen></iframe></div>",
+				"<div class=\"no-side\"><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/3euunwWh584\" frameborder=\"0\" allowfullscreen></iframe></div>",
 				"The second animation is a 30-second 'advertisement' for CL&E to be shown on various TV screens around campus, among other places. A soundtrack is currently in production by a Music Production graduate student at McGill's Schulich School of Music."
 			]
 		},
@@ -23,7 +23,7 @@
 			"medium": "Blender 3D, Adobe Illustrator",
 			"description": [
 				"One of two animations created for McGill's 2015 Grad Life Online Orientation video series. Intented to be calming, simple, and clean.",
-				"<div><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/AX2Gs7eMtU8\" frameborder=\"0\" allowfullscreen></iframe></div>",
+				"<div class=\"no-side\"><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/AX2Gs7eMtU8\" frameborder=\"0\" allowfullscreen></iframe></div>",
 				"The other animation (not featured) was for Grad Life Online Orientation's Academic and Professional Skills Development script. Similar format. Both completed in the Fall of 2014."
 			]
 		},

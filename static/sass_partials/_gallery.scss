@@ -1,5 +1,10 @@
 /* CSS necessary for Gallery view */
 
+@keyframes transition-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
 main { /* override default "main" block held in the "_main" partial */
 	width: 100%;
 	min-width: 800px; 
@@ -10,17 +15,27 @@ main { /* override default "main" block held in the "_main" partial */
 	padding: 0;
 
 	text-align: center;	
+	overflow-x: scroll;
+}
+
+#gallery-container {
+	@include auto_margin;
+	width: 1050px;
+	height: 100%;
 }
 
 #gallery-main {
-/*	@include auto_margin; */
 	margin: 0;
 	display: inline-block;
 
-	width: 875px;
+	width: calc(100% - 175px);
+	min-width: 875px;
 	height: 100%; 
+
 	background: rgba($black, 0.75);
 	color: $light;
+
+	float: right;
 
 /*	padding-bottom: 4rem; */
 	overflow: scroll;
@@ -34,21 +49,19 @@ main { /* override default "main" block held in the "_main" partial */
 	margin: 0;
 	display: inline-block;
 
+	float: left;
+
 	width: 175px; 
 /*	width: 875px; */
 	height: 100%;
 
 	cursor: default !important; 
 
-	background: rgba($black, 0.9);
+	background: rgba($black, 0.0);
 /*	color: $light; */
 
 	overflow-y: scroll;
 	overflow-x: hidden;
-
-	animation: transition-in 1.5s;
-	-webkit-animation: transition-in 1.5s;
-	-moz-animation: transition-in 1.5s;
 
 	/* PRETTY SURE THIS DISABLES HIGHLIGHTING */
 	-webkit-user-select: none;
@@ -65,13 +78,28 @@ main { /* override default "main" block held in the "_main" partial */
 	filter: blur(2.5px);
 }
 
-.gallery-side-el {
-	zoom: 0.2;
+#gallery-side-shade {
+	/* this :before is here to get rid of the blurred edges effect
+	when using CSS blur on the gallery-side block. provides a backdrop
+	for the blurred side gallery */
 
-	cursor: default !important;
-	color: $gray !important;
-	font-family: "BLOKK" !important;
+	z-index: -1;
+
+	float: left;
+	position: fixed;
+/*
+	left: calc(50% - 525px);
+*/
+	width: 175px;
+	height: 100%;
+
+	background: rgba($black, 0.9);
+
+	animation: transition-in 1.5s;
+	-webkit-animation: transition-in 1.5s;
+	-moz-animation: transition-in 1.5s;
 }
+
 /*
 #gallery-hover {
 	position: fixed;
@@ -85,16 +113,8 @@ main { /* override default "main" block held in the "_main" partial */
 	background: rgba($white, 0.25);
 }
 */
-@keyframes transition-in {
-	from {
-		opacity: 0; /* this is the smoothest transition, so it wins this round */
-	}
-	to { 
-		opacity: 1;
-	}
-}
 
-#overlay {
+#overlay { /* the block for full-screen image view */
 	height: 100%;
 	width: 100%;
 	position: fixed;
@@ -110,6 +130,16 @@ main { /* override default "main" block held in the "_main" partial */
 	opacity: 0.0;
 
 	z-index: -1; /* behind the main content block until pulled up */
+}
+
+.gallery-side-el {
+	zoom: 0.2;
+
+	cursor: default !important;
+	color: $gray !important;
+
+	font-family: "BLOKK" !important;
+	font-size: 0.5rem !important;
 }
 
 h1.gallery {
@@ -177,13 +207,58 @@ a.spotlight {
 		color: $light;
 	}
 }
+/*
+div.gallery-nav-wrap {
+	margin: 0;
+	padding: 0;
+}
+*/
+a.gallery-nav {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	
+	color: $gray;
+	text-decoration: none;
+	cursor: pointer;
 
-br.gallery-side-el {
-	display: none;
+	border-radius: 5px;
+
+	font-size: 12px;
+	margin: 0 5px;
+	padding: 4px 2px 0 2px;
+
+	background: rgba($black, 0.25);
+
+	transition: 0.25s;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+
+	&:hover { background: rgba($white, 0.1); }
+	&:active { background: rgba($white, 0.25); }
+}
+
+a.gallery-nav-current {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	
+	color: $gray;
+	text-decoration: none;
+	cursor: default;
+
+	border-radius: 5px;
+
+	font-size: 12px;
+	margin: 0 5px;
+	padding: 4px 2px 0 2px;
+
+	background: rgba($red, 0.25);
 }
 
 h5.gallery-side-el {
 	margin-top: 1rem;
+	margin-bottom: 1rem;
 	padding: 0;
 }
 

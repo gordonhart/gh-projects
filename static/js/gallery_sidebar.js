@@ -10,15 +10,18 @@ window.onload = function(){
 
 	for(var i=0; i<items.length; i++){
 		var new_node = cloneAndScale(items[i]);
-		gallery_side.appendChild(new_node);
+
+		if(!new_node.classList.contains("no-side")){
+			gallery_side.appendChild(new_node);
+		}
 	}
 
 	//JQUERY ELEMENTs for SLIDER
 //	document.getElementById('gallery-hover').addEventListener('mousedown', mouseDown, false);
 //	window.addEventListener('mouseup', mouseUp, false);
 
-	document.getElementById("gallery-main").addEventListener('scroll', followMain); // add scroll listener to main div
-	document.getElementById("gallery-side").addEventListener('scroll', followSide); // add scroll listener to side div
+	document.getElementById("gallery-main").addEventListener('scroll', follow); // add scroll listener to main div
+	document.getElementById("gallery-side").addEventListener('scroll', follow); // add scroll listener to side div
 };
 
 function cloneAndScale(el){
@@ -42,6 +45,37 @@ function cloneAndScale(el){
 	return node;
 }
 
+function follow(){
+	var leader_name = "#gallery-";
+	var follow_name = "#gallery-";
+
+	if($("#gallery-main").is(':hover')){ // currently scrolling in the main section
+		leader_name += "main";
+		follow_name += "side";
+	} else { // currenlty scrolling in the side section
+		leader_name += "side";
+		follow_name += "main";
+	}
+
+	if($(leader_name).is(':hover')){ // only do if hovered to get rid of echo/feedback between the two
+		var leader_height = $(leader_name)[0].scrollHeight; // this gets the total height of div
+		var follow_height = $(follow_name)[0].scrollHeight;
+
+		// calculate and compensate for the height of the scrollbar
+		var leader_bar_height = (window.innerHeight/leader_height)*leader_height;
+		var follow_bar_height = (window.innerHeight/follow_height)*follow_height;
+//		console.log("lead: " + leader_bar_height + ", follow: " + follow_bar_height);
+		leader_height -= leader_bar_height;
+		follow_height -= follow_bar_height;
+
+		var lead_position = $(leader_name).scrollTop(); // current position of the div being scrolled
+		var ratio = follow_height/leader_height;
+
+		$(follow_name).scrollTop(ratio*lead_position);
+	}
+}
+
+/*
 function followMain(){
 	if($("#gallery-main").is(':hover')){ // only do if hovered to get rid of echo/feedback between the two
 		var main_height = $("#gallery-main")[0].scrollHeight; // this gets the total height of div
@@ -66,7 +100,7 @@ function followSide(){
 
 		$("#gallery-main").scrollTop(ratio*side_position);
 	}
-}
+}*/
 
 /*******************************
 TESTING JQUERY FOR SLIDING PIECE

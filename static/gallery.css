@@ -294,6 +294,7 @@ a.regular {
   height: 100%;
   background: rgba(34, 34, 34, 0.75);
   color: #F8F8F8;
+  /*	box-shadow: 0 0 50px #000; */
   /*	padding-bottom: 4rem; */
   overflow: scroll;
   animation: transition-in 1.5s;
@@ -424,6 +425,11 @@ a.portfolio-img {
 
 /* ELEMENTS NECESSARY FOR GALLERY */
 /* CSS necessary for Gallery view */
+@keyframes transition-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 main {
   /* override default "main" block held in the "_main" partial */
   width: 100%;
@@ -431,16 +437,24 @@ main {
   height: 100%;
   margin: 0;
   padding: 0;
-  text-align: center; }
+  text-align: center;
+  overflow-x: scroll; }
+
+#gallery-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1050px;
+  height: 100%; }
 
 #gallery-main {
-  /*	@include auto_margin; */
   margin: 0;
   display: inline-block;
-  width: 875px;
+  width: calc(100% - 175px);
+  min-width: 875px;
   height: 100%;
   background: rgba(34, 34, 34, 0.75);
   color: #F8F8F8;
+  float: right;
   /*	padding-bottom: 4rem; */
   overflow: scroll;
   animation: transition-in 1.5s;
@@ -450,17 +464,15 @@ main {
 #gallery-side {
   margin: 0;
   display: inline-block;
+  float: left;
   width: 175px;
   /*	width: 875px; */
   height: 100%;
   cursor: default !important;
-  background: rgba(34, 34, 34, 0.9);
+  background: rgba(34, 34, 34, 0);
   /*	color: $light; */
   overflow-y: scroll;
   overflow-x: hidden;
-  animation: transition-in 1.5s;
-  -webkit-animation: transition-in 1.5s;
-  -moz-animation: transition-in 1.5s;
   /* PRETTY SURE THIS DISABLES HIGHLIGHTING */
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -474,11 +486,22 @@ main {
   -o-filter: blur(2.5px);
   filter: blur(2.5px); }
 
-.gallery-side-el {
-  zoom: 0.2;
-  cursor: default !important;
-  color: #DDDDDD !important;
-  font-family: "BLOKK" !important; }
+#gallery-side-shade {
+  /* this :before is here to get rid of the blurred edges effect
+  when using CSS blur on the gallery-side block. provides a backdrop
+  for the blurred side gallery */
+  z-index: -1;
+  float: left;
+  position: fixed;
+  /*
+  	left: calc(50% - 525px);
+  */
+  width: 175px;
+  height: 100%;
+  background: rgba(34, 34, 34, 0.9);
+  animation: transition-in 1.5s;
+  -webkit-animation: transition-in 1.5s;
+  -moz-animation: transition-in 1.5s; }
 
 /*
 #gallery-hover {
@@ -493,13 +516,8 @@ main {
 	background: rgba($white, 0.25);
 }
 */
-@keyframes transition-in {
-  from {
-    opacity: 0;
-    /* this is the smoothest transition, so it wins this round */ }
-  to {
-    opacity: 1; } }
 #overlay {
+  /* the block for full-screen image view */
   height: 100%;
   width: 100%;
   position: fixed;
@@ -512,6 +530,13 @@ main {
   opacity: 0.0;
   z-index: -1;
   /* behind the main content block until pulled up */ }
+
+.gallery-side-el {
+  zoom: 0.2;
+  cursor: default !important;
+  color: #DDDDDD !important;
+  font-family: "BLOKK" !important;
+  font-size: 0.5rem !important; }
 
 h1.gallery, h2.gallery {
   font-family: "Rad-Light"; }
@@ -561,11 +586,48 @@ a.spotlight {
   a.spotlight:active, a.spotlight:hover {
     color: #F8F8F8; }
 
-br.gallery-side-el {
-  display: none; }
+/*
+div.gallery-nav-wrap {
+	margin: 0;
+	padding: 0;
+}
+*/
+a.gallery-nav {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  color: #DDDDDD;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+  margin: 0 5px;
+  padding: 4px 2px 0 2px;
+  background: rgba(34, 34, 34, 0.25);
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s; }
+  a.gallery-nav:hover {
+    background: rgba(255, 255, 255, 0.1); }
+  a.gallery-nav:active {
+    background: rgba(255, 255, 255, 0.25); }
+
+a.gallery-nav-current {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  color: #DDDDDD;
+  text-decoration: none;
+  cursor: default;
+  border-radius: 5px;
+  font-size: 12px;
+  margin: 0 5px;
+  padding: 4px 2px 0 2px;
+  background: rgba(114, 0, 0, 0.25); }
 
 h5.gallery-side-el {
   margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 0; }
 
 .endblock {

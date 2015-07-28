@@ -2,46 +2,49 @@
 {% import 'macros/breadcrumbs.html' as crumbs %}
 
 {% block content %}
-<div id="gallery-side"></div><!-- need to do this to get rid of small gap between divs...
+<div id="gallery-container"><!-- this container is here to allow the page to be resized smaller than 1050px -->
+  <div id="gallery-side-shade"></div>
 
---><div id="gallery-main"> 
-<!-- to switch back to the old working verion, change this to "content-section" and get rid of the "gallery-side" div -->
-  {{ crumbs.trace(crumblist) }}
+  <div id="gallery-side"></div><!-- need to do this to get rid of small gap between divs...
 
-  <h1 class="gallery"><span class="label">Gallery | </span>{{ gallery.name }}</h1>
+  --><div id="gallery-main"> 
+  <!-- to switch back to the old working verion, change this to "content-section" and get rid of the "gallery-side" div -->
+    {{ crumbs.trace(crumblist) }}
 
-  <p class="blurb">{{ gallery.overview }}</p>
+    <h1 class="gallery no-side"><span class="label">Gallery | </span>{{ gallery.name }}</h1>
 
-  {% for image in gallery.images %}
-  {% set cur_index = loop.index %}
-  <h5 id="{{ cur_index }}"></h5>
-  <p><span class="label">Name | </span>{{ image.name }}<span class="date">{{ image.date }}<span class="label"> | Date</span></span></p>
-  <p><span class="label">Medium | </span>{{ image.medium }}</p>
+    <p class="blurb no-side">{{ gallery.overview }}</p>
 
-  {% for sentence in image.description %}
-  <p>{% if loop.index == 1 %}<span class="label">About | </span>{% endif %}{{ sentence }}</p>
-  {% endfor %}
+    {% for image in gallery.images %}
+    {% set cur_index = loop.index %}
+    <h5 id="{{ cur_index }}"></h5>
+    <p><span class="label">Name | </span>{{ image.name }}<span class="date">{{ image.date }}<span class="label"> | Date</span></span></p>
+    <p><span class="label">Medium | </span>{{ image.medium }}</p>
 
-  {% for url in image.urls %}
-  <img class="gallery-img" src="/static/gallery/{{ gallery.link }}/{{ url }}" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');" />
-<!--   <a class="spotlight" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');">view image fullscreen</a> -->
-  {% endfor %}
+    {% for sentence in image.description %}
+    <p>{% if loop.index == 1 %}<span class="label">About | </span>{% endif %}{{ sentence }}</p>
+    {% endfor %}
 
-  <br /><br />
-  
-  {# link to each image at the bottom of each image for navigation purposes #}
-  {% for link in gallery.images %}
-  {% if cur_index != loop.index %}
-  <a class="spotlight" href="#{{ loop.index }}">{{ loop.index }}</a>&nbsp;
-  {% else %}
-  <a class="spotlight" href="#{{ loop.index }}">[{{ loop.index }}]</a>&nbsp;
-  {% endif %}
-  {% endfor %}
+    {% for url in image.urls %}
+    <img class="gallery-img" src="/static/gallery/{{ gallery.link }}/{{ url }}" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');" />
+  <!--   <a class="spotlight" onclick="spotlight('/static/gallery/{{ gallery.link }}/{{ url }}');">view image fullscreen</a> -->
+    {% endfor %}
 
-  <br />
-  {% endfor %}
-  
-  <div class="endblock"></div>
+    <br class="no-side" /><br class="no-side" />
+    
+    {# link to each image at the bottom of each image for navigation purposes #}
+    <div class="gallery-nav-wrap no-side">
+    {% for link in gallery.images %}
+    <a class="gallery-nav{% if cur_index == loop.index %}-current{% endif %}" href="#{{ loop.index }}">{{ loop.index }}</a>
+    {% endfor %}
+    </div>
+
+    <br class="no-side" />
+    {% endfor %}
+    
+    <div class="endblock"></div>
+  </div>
+
 </div>
 
 <div id="overlay">

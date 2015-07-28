@@ -35,6 +35,9 @@ Order of the imports in this file is VERY important. Do not change without a rea
 @font-face {
   font-family: "Mono-Bold-Ital";
   src: url(fonts/AnonymousPro-BoldItalic.ttf); }
+@font-face {
+  font-family: "BLOKK";
+  src: url(fonts/BLOKKNeue-Regular.ttf); }
 /* USEFUL MIXINS */
 /* STRUCTURAL COMPONENTS */
 /* NAV CSS */

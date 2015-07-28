@@ -34,34 +34,57 @@ main { /* override default "main" block held in the "_main" partial */
 	margin: 0;
 	display: inline-block;
 
-/*	width: 175px; */
-	width: 875px;
+	width: 175px; 
+/*	width: 875px; */
 	height: 100%;
 
-	zoom: 0.2;
-
-	cursor: pointer; 
+	cursor: default !important; 
 
 	background: rgba($black, 0.9);
-	color: $light;
-	overflow: scroll;
+/*	color: $light; */
+
+	overflow-y: scroll;
+	overflow-x: hidden;
 
 	animation: transition-in 1.5s;
 	-webkit-animation: transition-in 1.5s;
 	-moz-animation: transition-in 1.5s;
+
+	/* PRETTY SURE THIS DISABLES HIGHLIGHTING */
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	/* THIS GIVES A NICE FROSTING EFFECT */
+	-webkit-filter: blur(2.5px);
+	-moz-filter: blur(2.5px);
+	-ms-filter: blur(2.5px);
+	-o-filter: blur(2.5px);
+	filter: blur(2.5px);
 }
 
+.gallery-side-el {
+	zoom: 0.2;
+
+	cursor: default !important;
+	color: $gray !important;
+	font-family: "BLOKK" !important;
+}
+/*
 #gallery-hover {
 	position: fixed;
+	cursor: ns-resize;
 
 	left: calc(50% - 525px);
 
 	width: 175px;
-	height: 100px;
+	height: 200px;
 
 	background: rgba($white, 0.25);
 }
-
+*/
 @keyframes transition-in {
 	from {
 		opacity: 0; /* this is the smoothest transition, so it wins this round */
@@ -105,6 +128,16 @@ img.gallery-img {
 	border-radius: 1rem;
 }
 
+img.gallery-img.gallery-side-el {
+	display: block;
+	margin: 1rem auto auto auto;
+
+	max-width: 66.6%;
+	max-height: calc(100% - 200px);
+
+	border-radius: 0.2rem;
+}
+
 img.gallery-full-img {
 	display: inline-block;
 	cursor: pointer;
@@ -143,6 +176,15 @@ a.spotlight {
 	&:active, &:hover {
 		color: $light;
 	}
+}
+
+br.gallery-side-el {
+	display: none;
+}
+
+h5.gallery-side-el {
+	margin-top: 1rem;
+	padding: 0;
 }
 
 .endblock {

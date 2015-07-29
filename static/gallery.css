@@ -293,7 +293,8 @@ a.regular {
   /*	transform: translateY(calc(-100% + 5rem)); */ }
   #title-text:hover {
     /*		transform: translateY(0); */
-    height: 100%;
+    height: calc(100% - 70px);
+    /* this works !!!!! */
     background: rgba(34, 34, 34, 0.75);
     color: #F8F8F8; }
 
@@ -303,7 +304,8 @@ a.regular {
   margin-right: auto;
   width: 75%;
   min-width: 800px;
-  height: 100%;
+  height: calc(100% - 70px);
+  /* this works !!!!! */
   position: absolute;
   /* this block ensures that it is always centered */
   left: 0;
@@ -574,19 +576,21 @@ button.gallery-welcome-button {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  background: #720000;
-  color: #F8F8F8;
-  font-family: "Rad-Medium";
+  background: #DDDDDD;
+  color: #720000;
+  font-family: "Rad-SemiBold";
   font-size: 2rem;
   width: 300px;
   height: 100px;
   border-radius: 25px;
-  border: 1px solid #F8F8F8;
+  border: 2.5px solid #720000;
+  cursor: pointer;
   transition: 0.25s;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s; }
   button.gallery-welcome-button:hover {
-    background: #420000; }
+    background: #F8F8F8;
+    font-size: 2.25rem; }
 
 h1.gallery, h2.gallery {
   font-family: "Rad-Light"; }
@@ -722,10 +726,10 @@ div.loaded {
 
 @keyframes throb {
   0% {
-    transform: translateX(-100px) rotate(10deg); }
+    transform: translateX(-100px) rotate(45deg); }
   50% {
-    transform: translateX(100px) rotate(-10deg); }
+    transform: translateX(100px) rotate(135deg); }
   100% {
-    transform: translateX(-100px) rotate(10deg); } }
+    transform: translateX(-100px) rotate(225deg); } }
 
 /*# sourceMappingURL=gallery.css.map */

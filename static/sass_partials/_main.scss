@@ -113,7 +113,7 @@ a.regular {
 
 	&:hover {
 /*		transform: translateY(0); */
-		height: 100%;
+		height: calc(100% - 70px); /* this works !!!!! */
 		background: rgba($black, 0.75);
 		color: $light;
 	} 
@@ -124,7 +124,7 @@ a.regular {
 
 	width: 75%;
 	min-width: 800px;
-	height: 100%; 
+	height: calc(100% - 70px); /* this works !!!!! */
 
 	position: absolute; /* this block ensures that it is always centered */
 	left: 0;

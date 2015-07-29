@@ -47,24 +47,34 @@ nav {
   margin-bottom: 0px;
   /* this isn't good.... */
   margin-left: -10px;
-  width: 100%; }
+  width: 100%;
+  min-width: 1050px; }
 
 footer {
   margin-left: auto;
   margin-right: auto;
   padding: 10px 10px 10px 10px;
-  position: relative;
+  /*	@include sticky-bottom-container; */
+  height: 50px;
+  width: 100%;
+  position: fixed;
   text-align: center;
   color: #222222;
   background: #720000;
-  height: 50px; }
+  z-index: 999;
+  bottom: 0;
+  left: -10px;
+  /* not ideal, to compensate for auto padding */ }
 
+/*
 #sticky-element {
-  width: 100%;
-  height: auto;
-  position: fixed;
-  bottom: 0; }
+	width:100%;
+	height:auto;
 
+	position: fixed;
+	bottom: 0;
+}
+*/
 a.nav-tab {
   margin: 0px 15px;
   display: inline-block;
@@ -194,7 +204,7 @@ html, body {
 
 main {
   width: 100%;
-  min-width: 800px;
+  min-width: 1050px;
   height: calc(100% - 70px);
   /* this works !!!!! */
   margin: 0;
@@ -248,10 +258,14 @@ a.regular {
   margin-left: auto;
   margin-right: auto;
   width: 75%;
+  min-width: 800px;
   height: 4rem;
   background: rgba(34, 34, 34, 0);
   color: #DDDDDD;
-  /*	padding-top:2rem; */
+  position: absolute;
+  /* this block ensures that it is always centered */
+  left: 0;
+  right: 0;
   overflow: scroll;
   animation: transition-in 1.5s;
   -webkit-animation: transition-in 1.5s;
@@ -271,11 +285,15 @@ a.regular {
   margin-left: auto;
   margin-right: auto;
   width: 75%;
+  min-width: 800px;
   height: 100%;
+  position: absolute;
+  /* this block ensures that it is always centered */
+  left: 0;
+  right: 0;
   background: rgba(34, 34, 34, 0.75);
   color: #F8F8F8;
   /*	box-shadow: 0 0 50px #000; */
-  /*	padding-bottom: 4rem; */
   overflow: scroll;
   animation: transition-in 1.5s;
   -webkit-animation: transition-in 1.5s;

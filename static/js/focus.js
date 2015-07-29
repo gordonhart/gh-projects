@@ -2,8 +2,8 @@ function spotlight(image_source){
 	/*
 	This function toggles isolation view mode for images in the gallery.
 	*/
-	var overlay = document.getElementById("overlay"); // fixed-position div covering full screen
-	var image = document.getElementById("overlay-image");
+	var overlay = document.getElementById("gallery-overlay"); // fixed-position div covering full screen
+	var image = document.getElementById("gallery-overlay-image");
 
 	image.src = image_source; // set the new spotlight image
 

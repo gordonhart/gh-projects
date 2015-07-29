@@ -1,0 +1,10 @@
+/* 
+Order of the imports in this file is VERY important. Do not change without a reason.
+*/
+
+/* COMMONLY USED MIXINS */
+@import "sass_partials/colors-fonts";
+@import "sass_partials/mixins";
+
+/* STRUCTURAL COMPONENTS */
+@import "sass_partials/mobile";

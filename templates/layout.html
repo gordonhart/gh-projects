@@ -26,10 +26,12 @@ Traverse at your own risk.
 
     <script type="text/javascript" src="/static/js/focus.js"></script>
     <script type="text/javascript" src="/static/js/mobile_redirect.js"></script>
-    <script type="text/javascript" src="/static/js/gallery_sidebar.js"></script>
 
-    <!-- MAY NOT NEED TO KEEP THIS -->
+    {% if css == 'gallery.css' %}
+    <script type="text/javascript" src="/static/js/gallery_sidebar.js"></script>
+    <!-- GALLERY USES JQUERY -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    {% endif %}
 
     {# pass the location attributes on to the background slider #}
     {{ bg.slide(locs.from, locs.to) }}
@@ -45,21 +47,19 @@ Traverse at your own risk.
     </div>
 
     <!-- NAV BAR -->
-    <div id="sticky-element">
-      <footer>
+    <footer id="foot">
 
-        <nav>
-          <a class="nav-title" href="/">gh-projects</a>
+      <nav>
+        <a class="nav-title" href="/">gh-projects</a>
 
-          <a class="nav-tab {% if active == "about" %}current{% endif %}" href="/about">About</a>
-          <a class="nav-tab {% if active == "projects" %}current{% endif %}" href="/projects">Projects</a>
-          <a class="nav-tab {% if active == "portfolio" %}current{% endif %}" href="/portfolio">Portfolio</a>
-          <a class="nav-tab {% if active == "contact" %}current{% endif %}" href="/contact">Contact</a>
-          <a class="nav-tab" href="http://gordonhart.co">Blog</a>
-        </nav>
+        <a class="nav-tab {% if active == "about" %}current{% endif %}" href="/about">About</a>
+        <a class="nav-tab {% if active == "projects" %}current{% endif %}" href="/projects">Projects</a>
+        <a class="nav-tab {% if active == "portfolio" %}current{% endif %}" href="/portfolio">Portfolio</a>
+        <a class="nav-tab {% if active == "contact" %}current{% endif %}" href="/contact">Contact</a>
+        <a class="nav-tab" href="http://gordonhart.co">Blog</a>
+      </nav>
 
-      </footer>
-    </div>
+    </footer>
     <!-- ENDNAV -->
 
   </body>

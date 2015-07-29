@@ -22,6 +22,10 @@ window.onload = function(){
 
 	document.getElementById("gallery-main").addEventListener('scroll', follow); // add scroll listener to main div
 	document.getElementById("gallery-side").addEventListener('scroll', follow); // add scroll listener to side div
+
+	// enable button to hide the loading screen
+//	document.getElementById("gallery-welcome-button").disabled = false;
+	loadComplete();
 };
 
 function cloneAndScale(el){
@@ -73,6 +77,24 @@ function follow(){
 
 		$(follow_name).scrollTop(ratio*lead_position);
 	}
+}
+
+function loadComplete(){
+/*	document.getElementById("gallery-welcome-button").style.display = 'block'; */
+	var loading = document.getElementsByClassName("loading");
+	var loaded = document.getElementsByClassName("loaded");
+
+	for(var i=0; i<loading.length; i++){ // hide loading objects
+		loading[i].style.display = 'none';
+	}
+	for(var i=0; i<loaded.length; i++){ // show loaded objects
+		loaded[i].style.display = 'block';
+	}
+}
+
+function hideWelcome(){
+	document.getElementById("gallery-welcome").style.display = "none";
+	document.getElementById("foot").classList.add("exit");
 }
 
 /*

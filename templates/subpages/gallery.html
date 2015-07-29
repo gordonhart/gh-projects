@@ -2,6 +2,17 @@
 {% import 'macros/breadcrumbs.html' as crumbs %}
 
 {% block content %}
+<div id="gallery-welcome">
+  <div class="loading">
+    <div class="loader"></div>
+  </div>
+  <div class="loaded">
+    <h3>Welcome to the Gallery</h3>
+    <p class="blurb">To display an image in fullscreen, simply click on the image you wish to view. To exit fullscreen view, click again on the image to close the window.</p>
+    <button id="gallery-welcome-button" class="gallery-welcome-button" onclick="hideWelcome();">Enter Gallery</button>
+  </div>
+</div>
+
 <div id="gallery-container"><!-- this container is here to allow the page to be resized smaller than 1050px -->
   <div id="gallery-side-shade"></div>
 
@@ -47,7 +58,7 @@
 
 </div>
 
-<div id="overlay">
-  <img id="overlay-image" class="gallery-full-img" src="/static/images/none.png" onclick="spotlight('/static/images/none.png');" />
+<div id="gallery-overlay">
+  <img id="gallery-overlay-image" class="gallery-full-img" src="/static/images/none.png" onclick="spotlight('/static/images/none.png');" />
 </div>
 {% endblock %}

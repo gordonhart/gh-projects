@@ -1,0 +1,66 @@
+/* 
+Order of the imports in this file is VERY important. Do not change without a reason.
+*/
+/* COMMONLY USED MIXINS */
+/* COLORS */
+/* FONTS */
+@font-face {
+  font-family: "Rad-Light";
+  src: url(fonts/Rajdhani-Light.ttf); }
+@font-face {
+  font-family: "Rad-Bold";
+  src: url(fonts/Rajdhani-Bold.ttf); }
+@font-face {
+  font-family: "Rad-Medium";
+  src: url(fonts/Rajdhani-Medium.ttf); }
+@font-face {
+  font-family: "Rad-Regular";
+  src: url(fonts/Rajdhani-Regular.ttf); }
+@font-face {
+  font-family: "Rad-SemiBold";
+  src: url(fonts/Rajdhani-SemiBold.ttf); }
+@font-face {
+  font-family: "Mono";
+  src: url(fonts/AnonymousPro-Regular.ttf); }
+@font-face {
+  font-family: "Mono-Ital";
+  src: url(fonts/AnonymousPro-Italic.ttf); }
+@font-face {
+  font-family: "Mono-Bold";
+  src: url(fonts/AnonymousPro-Bold.ttf); }
+@font-face {
+  font-family: "Mono-Bold-Ital";
+  src: url(fonts/AnonymousPro-BoldItalic.ttf); }
+@font-face {
+  font-family: "BLOKK";
+  src: url(fonts/BLOKKNeue-Regular.ttf); }
+/* USEFUL MIXINS */
+/* STRUCTURAL COMPONENTS */
+html, body {
+  font-family: "Rad-Regular";
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px; }
+
+main {
+  width: 100%;
+  height: 100%;
+  background: url("/static/images/cubefield_v8.jpg");
+  background-size: cover;
+  color: #222222;
+  padding-top: 1rem; }
+
+#red-block {
+  width: 100%;
+  height: 60px;
+  bottom: 0;
+  position: fixed;
+  line-height: 60px;
+  font-size: 30px;
+  background: #720000;
+  color: #F8F8F8; }
+
+/*# sourceMappingURL=mobile.css.map */

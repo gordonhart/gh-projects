@@ -20,7 +20,9 @@ main { /* override default "main" block held in the "_main" partial */
 
 #gallery-container {
 	@include auto_margin;
-	width: 1050px;
+	width: 75%;
+
+	min-width: 1050px;
 	height: 100%;
 }
 
@@ -100,6 +102,26 @@ main { /* override default "main" block held in the "_main" partial */
 	-moz-animation: transition-in 1.5s;
 }
 
+#gallery-welcome {
+	@include auto_margin;
+
+	height: 100%;
+	width: 75%;
+	min-width: 1050px;
+
+	text-align: center;
+	z-index: 2;
+
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+
+	background: rgba(black, 0.9);
+	color: $light;
+/*	-webkit-filter: blur(10px); */
+}
+
 /*
 #gallery-hover {
 	position: fixed;
@@ -114,7 +136,7 @@ main { /* override default "main" block held in the "_main" partial */
 }
 */
 
-#overlay { /* the block for full-screen image view */
+#gallery-overlay { /* the block for full-screen image view */
 	height: 100%;
 	width: 100%;
 	position: fixed;
@@ -140,6 +162,32 @@ main { /* override default "main" block held in the "_main" partial */
 
 	font-family: "BLOKK" !important;
 	font-size: 0.5rem !important;
+}
+
+button.gallery-welcome-button{
+	@include auto_margin;
+
+	display: block;
+
+	background: $red;
+	color: $light;
+
+	font-family: "Rad-Medium";
+	font-size: 2rem;
+
+	width: 300px;
+	height: 100px;
+
+	border-radius: 25px;
+	border: 1px solid $light;
+
+	transition: 0.25s;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+
+	&:hover {
+		background: rgb(66,0,0);
+	}
 }
 
 h1.gallery {
@@ -268,3 +316,66 @@ h5.gallery-side-el {
 
 	display: block;
 }
+
+/*
+EXPERIMENTAL
+LOADING 
+ANIMATION
+*/
+
+div.loader {
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	position: fixed;
+
+	display: block;
+	width: 10%;
+	height: 50px;
+
+	text-align: center;
+	line-height: 50px;
+
+	background: $light;
+	color: $black;
+
+	border-radius: 25px;
+
+	animation: throb 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
+	-webkit-animation: throb 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
+	-moz-animation: throb 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+div.loaded {
+	display: none;
+
+	height: 400px;
+	width: 50%;
+
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	position: fixed;
+}
+
+@keyframes throb {
+	0%{
+		transform: translateX(-100px) rotate(10deg);
+	}
+	50%{
+		transform: translateX(100px) rotate(-10deg);
+	}
+	100%{
+		transform: translateX(-100px) rotate(10deg);
+	}
+}
+
+
+
+

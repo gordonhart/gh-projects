@@ -13,21 +13,29 @@ nav {
 	margin-left: -10px;
 
 	width: 100%;
+	min-width: 1050px;
 }
 
 footer {
 	@include auto_margin;
 	@include uniform-padding(10px);
 
-	@include sticky-bottom-container;
+/*	@include sticky-bottom-container; */
 
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	
 	text-align: center;
 	color: $black;
 	background: $red;
 
-	height: 50px;
-}
+	z-index: 999;
 
+	bottom: 0;
+	left: -10px; /* not ideal, to compensate for auto padding */
+}
+/*
 #sticky-element {
 	width:100%;
 	height:auto;
@@ -35,7 +43,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 }
-
+*/
 a.nav-tab {
 	@include nav-el;
 	@include uniform-padding(10px);

@@ -87,8 +87,13 @@ def gallery(gallery='full'):
 	
 	gallery_dict = json.loads(gallery_text) # parse JSON file as text
 
+	extra_scripts = [ # extra scripts to be used with the gallery
+		'/static/js/gallery_sidebar.js', 
+		'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'
+	]
+	
 	crumbs = ['portfolio', gallery]
-	return render_template('subpages/gallery.html', locs=fromTo, active='portfolio', gallery=gallery_dict, css="gallery.css", crumblist=crumbs)
+	return render_template('subpages/gallery.html', locs=fromTo, active='portfolio', gallery=gallery_dict, css="gallery.css", crumblist=crumbs, scripts=extra_scripts)
 
 
 @app.route('/mobile')

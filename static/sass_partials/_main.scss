@@ -100,20 +100,16 @@ a.regular {
 	right: 0;
 
 	overflow: scroll;
+	cursor: default;
 
-	animation: transition-in 1.5s;
-	-webkit-animation: transition-in 1.5s;
-	-moz-animation: transition-in 1.5s;
+	opacity: 0; /* will be overridden when .transition-in is applied */
 
 	transition: 1s;
 	-webkit-transition: 1s;
 	-moz-transition: 1s;
 
-/*	transform: translateY(calc(-100% + 5rem)); */
-
 	&:hover {
-/*		transform: translateY(0); */
-		height: calc(100% - 70px); /* this works !!!!! */
+		height: calc(100% - 70px);
 		background: rgba($black, 0.75);
 		color: $light;
 	} 
@@ -133,8 +129,12 @@ a.regular {
 	background: rgba($black, 0.75);
 	color: $light;
 
-/*	box-shadow: 0 0 50px #000; */
 	overflow: scroll;
+	opacity: 0; /* will be overridden when .transition-in is applied */
+}
+
+.transition-in { /* fade-in animation for main display blocks */
+	opacity: 1 !important;
 
 	animation: transition-in 1.5s;
 	-webkit-animation: transition-in 1.5s;
@@ -142,12 +142,8 @@ a.regular {
 }
 
 @keyframes transition-in {
-	from {
-		opacity: 0; /* this is the smoothest transition, so it wins this round */
-	}
-	to { 
-		opacity: 1;
-	}
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 
 /* CLASS BLOCKS */

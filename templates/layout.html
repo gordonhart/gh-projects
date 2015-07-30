@@ -25,13 +25,12 @@ Traverse at your own risk.
     <link rel="stylesheet" href="/static/{{ css }}">
 
     <script type="text/javascript" src="/static/js/focus.js"></script>
-    <script type="text/javascript" src="/static/js/mobile_redirect.js"></script>
+    <script type="text/javascript" src="/static/js/loader.js"></script>
 
-    {% if css == 'gallery.css' %}
-    <script type="text/javascript" src="/static/js/gallery_sidebar.js"></script>
-    <!-- GALLERY USES JQUERY -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    {% endif %}
+    {# DYNAMICALLY ADD EXTRA SCRIPTS #}
+    {% for script in scripts %}
+    <script type="text/javascript" src="{{ script }}"></script>
+    {% endfor %}
 
     {# pass the location attributes on to the background slider #}
     {{ bg.slide(locs.from, locs.to) }}

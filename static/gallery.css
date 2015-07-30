@@ -284,17 +284,14 @@ a.regular {
   left: 0;
   right: 0;
   overflow: scroll;
-  animation: transition-in 1.5s;
-  -webkit-animation: transition-in 1.5s;
-  -moz-animation: transition-in 1.5s;
+  cursor: default;
+  opacity: 0;
+  /* will be overridden when .transition-in is applied */
   transition: 1s;
   -webkit-transition: 1s;
-  -moz-transition: 1s;
-  /*	transform: translateY(calc(-100% + 5rem)); */ }
+  -moz-transition: 1s; }
   #title-text:hover {
-    /*		transform: translateY(0); */
     height: calc(100% - 70px);
-    /* this works !!!!! */
     background: rgba(34, 34, 34, 0.75);
     color: #F8F8F8; }
 
@@ -312,16 +309,20 @@ a.regular {
   right: 0;
   background: rgba(34, 34, 34, 0.75);
   color: #F8F8F8;
-  /*	box-shadow: 0 0 50px #000; */
   overflow: scroll;
+  opacity: 0;
+  /* will be overridden when .transition-in is applied */ }
+
+.transition-in {
+  /* fade-in animation for main display blocks */
+  opacity: 1 !important;
   animation: transition-in 1.5s;
   -webkit-animation: transition-in 1.5s;
   -moz-animation: transition-in 1.5s; }
 
 @keyframes transition-in {
   from {
-    opacity: 0;
-    /* this is the smoothest transition, so it wins this round */ }
+    opacity: 0; }
   to {
     opacity: 1; } }
 /* CLASS BLOCKS */

@@ -16,15 +16,10 @@ window.onload = function(){
 		}
 	}
 
-	//JQUERY ELEMENTs for SLIDER
-//	document.getElementById('gallery-hover').addEventListener('mousedown', mouseDown, false);
-//	window.addEventListener('mouseup', mouseUp, false);
-
 	document.getElementById("gallery-main").addEventListener('scroll', follow); // add scroll listener to main div
 	document.getElementById("gallery-side").addEventListener('scroll', follow); // add scroll listener to side div
 
 	// enable button to hide the loading screen
-//	document.getElementById("gallery-welcome-button").disabled = false;
 	loadComplete();
 };
 
@@ -96,53 +91,3 @@ function hideWelcome(){
 	document.getElementById("gallery-welcome").style.display = "none";
 	document.getElementById("foot").classList.add("exit");
 }
-
-/*
-function followMain(){
-	if($("#gallery-main").is(':hover')){ // only do if hovered to get rid of echo/feedback between the two
-		var main_height = $("#gallery-main")[0].scrollHeight; // this gets the total height of div
-		var side_height = $("#gallery-side")[0].scrollHeight;
-
-		var main_position = $("#gallery-main").scrollTop();
-
-		var ratio = side_height/main_height;
-
-		$("#gallery-side").scrollTop(ratio*main_position);
-	}
-}
-
-function followSide(){
-	if($("#gallery-side").is(':hover')){
-		var main_height = $("#gallery-main")[0].scrollHeight; // this gets the total height of div
-		var side_height = $("#gallery-side")[0].scrollHeight;
-
-		var side_position = $("#gallery-side").scrollTop();
-
-		var ratio = main_height/side_height;
-
-		$("#gallery-main").scrollTop(ratio*side_position);
-	}
-}*/
-
-/*******************************
-TESTING JQUERY FOR SLIDING PIECE
-*******************************/
-/*
-
-function mouseUp(){
-	window.removeEventListener('mousemove', divMove, true);
-}
-
-function mouseDown(e){
-	window.addEventListener('mousemove', divMove, true);
-}
-
-function divMove(e){
-	var div = document.getElementById('gallery-hover');
-
-	if(e.clientY >= 0 && e.clientY <= (window.innerHeight-100)){
-		div.style.top = e.clientY + 'px';
-	}
-}
-
-*/

@@ -709,9 +709,9 @@ div.loader {
   background: #F8F8F8;
   color: #222222;
   border-radius: 25px;
-  animation: throb 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
-  -webkit-animation: throb 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
-  -moz-animation: throb 2s infinite cubic-bezier(0.5, 0, 0.5, 1); }
+  animation: loading 3s infinite cubic-bezier(0.5, 0, 0.5, 1);
+  -webkit-animation: loading 3s infinite cubic-bezier(0.5, 0, 0.5, 1);
+  -moz-animation: loading 3s infinite cubic-bezier(0.5, 0, 0.5, 1); }
 
 div.loaded {
   display: none;
@@ -724,12 +724,14 @@ div.loaded {
   bottom: 0;
   position: fixed; }
 
-@keyframes throb {
+@keyframes loading {
   0% {
-    transform: translateX(-100px) rotate(45deg); }
-  50% {
-    transform: translateX(100px) rotate(135deg); }
+    transform: translateY(-140px) rotate(0deg); }
+  33% {
+    transform: translateX(-100px) rotate(225deg); }
+  66% {
+    transform: translateX(100px) rotate(495deg); }
   100% {
-    transform: translateX(-100px) rotate(225deg); } }
+    transform: translateY(-140px) rotate(720deg); } }
 
 /*# sourceMappingURL=gallery.css.map */

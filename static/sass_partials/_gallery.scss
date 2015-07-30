@@ -346,9 +346,9 @@ div.loader {
 
 	border-radius: 25px;
 
-	animation: throb 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
-	-webkit-animation: throb 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
-	-moz-animation: throb 2s infinite cubic-bezier(0.5, 0, 0.5, 1);
+	animation: loading 3s infinite cubic-bezier(0.5, 0, 0.5, 1);
+	-webkit-animation: loading 3s infinite cubic-bezier(0.5, 0, 0.5, 1);
+	-moz-animation: loading 3s infinite cubic-bezier(0.5, 0, 0.5, 1);
 }
 
 div.loaded {
@@ -366,15 +366,18 @@ div.loaded {
 	position: fixed;
 }
 
-@keyframes throb {
+@keyframes loading {
 	0%{
-		transform: translateX(-100px) rotate(45deg);
+		transform: translateY(-140px) rotate(0deg);
 	}
-	50%{
-		transform: translateX(100px) rotate(135deg);
+	33%{
+		transform: translateX(-100px)rotate(225deg);
+	}
+	66%{
+		transform: translateX(100px)rotate(495deg);
 	}
 	100%{
-		transform: translateX(-100px) rotate(225deg);
+		transform: translateY(-140px) rotate(720deg);
 	}
 }
 

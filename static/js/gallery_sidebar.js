@@ -88,6 +88,7 @@ function loadComplete(){
 }
 
 function hideWelcome(){
-	document.getElementById("gallery-welcome").style.display = "none";
-	document.getElementById("foot").classList.add("exit");
+//	document.getElementById("gallery-welcome").style.display = "none"; // this one works too, but no animation
+	document.getElementById("gallery-welcome").classList.add("slide-up");
+	document.getElementById("foot").classList.add("slide-down");
 }

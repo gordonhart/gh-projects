@@ -1,5 +1,12 @@
 /* USEFUL MIXINS */
 
+@mixin transition($sec) {
+	-webkit-transition: $sec;
+	-moz-transition: $sec;
+	-ms-transition: $sec;
+	transition: $sec;
+}
+
 @mixin auto_margin {
 	margin-left: auto;
 	margin-right: auto;

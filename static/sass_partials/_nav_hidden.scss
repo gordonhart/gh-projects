@@ -36,15 +36,13 @@ footer {
 
 	z-index: 999;
 
-	transition: 0.5s;
-	-webkit-transition: 0.5s;
-	-moz-transition: 0.5s;
+	@include transition(0.5s);
 }
 
-footer.exit {
-	animation: slide-out 1.0s;
-	-webkit-animation: slide-out 1.0s;
-	-moz-animation: slide-out 1.0s;
+footer.slide-down {
+	animation: slide-out 1.5s;
+	-webkit-animation: slide-out 1.5s;
+	-moz-animation: slide-out 1.5s;
 
 	opacity: 0;
 
@@ -53,16 +51,6 @@ footer.exit {
 	}
 }
 
-@keyframes slide-out {
-	from {
-		transform: translateY(0px);
-		opacity: 1.0;
-	}
-	to { 
-		transform: translateY(70px);
-		opacity: 1.0;
-	}
-}
 /*
 #sticky-element {
 	width:100%;
@@ -100,10 +88,7 @@ a.nav-tab {
 		} /* do nothing on hover for selected tab */
 	}
 
-	transition: 0.20s;
-	-webkit-transition: 0.20s;
-	-moz-transition: 0.20s;
-
+	@include transition(0.20s);
 	&:hover {
 		color: $white;
 
@@ -132,13 +117,53 @@ a.nav-title {
 	text-decoration: none;
 	font-size: 2rem;
 
-	transition: 0.20s;
-	-webkit-transition: 0.20s;
-	-moz-transition: 0.20s;
-
+	@include transition(0.20s);
 	&:hover {
 		font-size: 2.2rem;
 		color: $white;
 		cursor: pointer;
+	}
+}
+
+/* KEYFRAMES */
+
+@keyframes slide-out {
+	from {
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		transform: translateY(0px);
+		opacity: 1.0;
+	}
+	to { 
+		-webkit-transform: translateY(70px);
+		-moz-transform: translateY(70px);
+		transform: translateY(70px);
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes slide-out {
+	from {
+		-webkit-transform: translateY(0px);
+		transform: translateY(0px);
+		opacity: 1.0;
+	}
+	to { 
+		-webkit-transform: translateY(70px);
+		transform: translateY(70px);
+		opacity: 1.0;
+	}
+}
+
+@-moz-keyframes slide-out {
+	from {
+		-moz-transform: translateY(0px);
+		transform: translateY(0px);
+		opacity: 1.0;
+	}
+	to { 
+		-moz-transform: translateY(70px);
+		transform: translateY(70px);
+		opacity: 1.0;
 	}
 }

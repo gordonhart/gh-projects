@@ -104,10 +104,7 @@ a.regular {
 
 	opacity: 0; /* will be overridden when .transition-in is applied */
 
-	transition: 1s;
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-
+	@include transition(1s);
 	&:hover {
 		height: calc(100% - 70px);
 		background: rgba($black, 0.75);
@@ -139,11 +136,6 @@ a.regular {
 	animation: transition-in 1.5s;
 	-webkit-animation: transition-in 1.5s;
 	-moz-animation: transition-in 1.5s;
-}
-
-@keyframes transition-in {
-	from { opacity: 0; }
-	to { opacity: 1; }
 }
 
 /* CLASS BLOCKS */
@@ -235,10 +227,7 @@ img.icon {
 	width: 50px;
 	display: inline-block;
 
-	transition: 0.25s;
-	-webkit-transition: 0.25s;
-	-moz-transition: 0.25s;
-
+	@include transition(0.25s);
 	&:hover {
 		opacity: 1;
 	}
@@ -282,12 +271,26 @@ a.portfolio-img {
 	display: block;
 	border-radius: 1rem;
 
-	transition: 0.5s;
-	-webkit-transition: 0.5s;
-	-moz-transition: 0.5s;
-
+	@include transition(0.5s);
 	&:hover {
 		background: rgba($black, 0.5);
 		color: rgba($light, 1);
 	}
+}
+
+/* KEYFRAMES */
+
+@keyframes transition-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@-webkit-keyframes transition-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@-moz-keyframes transition-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }

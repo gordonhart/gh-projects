@@ -30,13 +30,46 @@
 	-webkit-animation: slide-background 2s ease;
 
 	left: 0px; 
-	transform: translate({{ endLoc }}px);
 	top: 0;
+
+	-webkit-transform: translate({{ endLoc }}px);
+	-moz-transform: translate({{ endLoc }}px);
+	transform: translate({{ endLoc }}px);
 }
 
 @keyframes slide-background { /* smoother using translate than left */
-	from { transform: translateX({{ startLoc }}px); }
-	to { transform: translateX({{ endLoc }}px); }
+	from { 
+		-webkit-transform: translateX({{ startLoc }}px);
+		-moz-transform: translateX({{ startLoc }}px); 
+		transform: translateX({{ startLoc }}px); 
+	}
+	to {
+		-webkit-transform: translateX({{ endLoc }}px); 
+		-moz-transform: translateX({{ endLoc }}px); 
+		transform: translateX({{ endLoc }}px); 
+	}
+}
+
+@-webkit-keyframes slide-background { /* smoother using translate than left */
+	from { 
+		-webkit-transform: translateX({{ startLoc }}px); 
+		transform: translateX({{ startLoc }}px); 
+	}
+	to { 
+		-webkit-transform: translateX({{ endLoc }}px); 
+		transform: translateX({{ endLoc }}px); 
+	}
+}
+
+@-moz-keyframes slide-background { /* smoother using translate than left */
+	from { 
+		-moz-transform: translateX({{ startLoc }}px); 
+		transform: translateX({{ startLoc }}px); 
+	}
+	to { 
+		-moz-transform: translateX({{ endLoc }}px); 
+		transform: translateX({{ endLoc }}px); 
+	}
 }
 </style>
 

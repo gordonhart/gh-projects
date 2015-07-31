@@ -1,10 +1,5 @@
 /* CSS necessary for Gallery view */
 
-@keyframes transition-in {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-
 main { /* override default "main" block held in the "_main" partial */
 	width: 100%;
 	min-width: 800px; 
@@ -119,22 +114,7 @@ main { /* override default "main" block held in the "_main" partial */
 
 	background: rgba(black, 0.9);
 	color: $light;
-/*	-webkit-filter: blur(10px); */
 }
-
-/*
-#gallery-hover {
-	position: fixed;
-	cursor: ns-resize;
-
-	left: calc(50% - 525px);
-
-	width: 175px;
-	height: 200px;
-
-	background: rgba($white, 0.25);
-}
-*/
 
 #gallery-overlay { /* the block for full-screen image view */
 	height: 100%;
@@ -182,13 +162,19 @@ button.gallery-welcome-button{
 	border: 2.5px solid $red;
 	cursor: pointer;
 
-	transition: 0.25s;
-	-webkit-transition: 0.25s;
-	-moz-transition: 0.25s;
-
+	@include transition(0.25s);
 	&:hover {
 		background: $light;
 		font-size: 2.25rem;
+	}
+
+	&:active { 
+		background: $white;
+		outline: none; 
+	}
+
+	&:focus { 
+		outline: none; 
 	}
 }
 
@@ -280,10 +266,7 @@ a.gallery-nav {
 
 	background: rgba($black, 0.25);
 
-	transition: 0.25s;
-	-webkit-transition: 0.25s;
-	-moz-transition: 0.25s;
-
+	@include transition(0.25s);
 	&:hover { background: rgba($white, 0.1); }
 	&:active { background: rgba($white, 0.25); }
 }
@@ -332,7 +315,7 @@ div.loader {
 	top: 0;
 	bottom: 0;
 
-	position: fixed;
+	position: absolute;
 
 	display: block;
 	width: 10%;
@@ -363,21 +346,115 @@ div.loaded {
 	top: 0;
 	bottom: 0;
 
-	position: fixed;
+	position: absolute;
 }
+
+/* KEYFRAMES */
 
 @keyframes loading {
 	0%{
+		-webkit-transform: translateY(-140px) rotate(0deg);
+		-moz-transform: translateY(-140px) rotate(0deg);
 		transform: translateY(-140px) rotate(0deg);
 	}
 	33%{
+		-webkit-transform: translateX(-100px)rotate(225deg);
+		-moz-transform: translateX(-100px)rotate(225deg);
 		transform: translateX(-100px)rotate(225deg);
 	}
 	66%{
+		-webkit-transform: translateX(100px)rotate(495deg);
+		-moz-transform: translateX(100px)rotate(495deg);
 		transform: translateX(100px)rotate(495deg);
 	}
 	100%{
+		-webkit-transform: translateY(-140px) rotate(720deg);
+		-moz-transform: translateY(-140px) rotate(720deg);
 		transform: translateY(-140px) rotate(720deg);
+	}
+}
+
+@-webkit-keyframes loading {
+	0%{
+		-webkit-transform: translateY(-140px) rotate(0deg);
+		transform: translateY(-140px) rotate(0deg);
+	}
+	33%{
+		-webkit-transform: translateX(-100px)rotate(225deg);
+		transform: translateX(-100px)rotate(225deg);
+	}
+	66%{
+		-webkit-transform: translateX(100px)rotate(495deg);
+		transform: translateX(100px)rotate(495deg);
+	}
+	100%{
+		-webkit-transform: translateY(-140px) rotate(720deg);
+		transform: translateY(-140px) rotate(720deg);
+	}
+}
+
+@-moz-keyframes loading {
+	0%{
+		-moz-transform: translateY(-140px) rotate(0deg);
+		transform: translateY(-140px) rotate(0deg);
+	}
+	33%{
+		-moz-transform: translateX(-100px)rotate(225deg);
+		transform: translateX(-100px)rotate(225deg);
+	}
+	66%{
+		-moz-transform: translateX(100px)rotate(495deg);
+		transform: translateX(100px)rotate(495deg);
+	}
+	100%{
+		-moz-transform: translateY(-140px) rotate(720deg);
+		transform: translateY(-140px) rotate(720deg);
+	}
+}
+
+
+.slide-up {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
+
+	-webkit-animation: slide-up 1.25s ease;
+	-moz-animation: slide-up 1.25s ease;
+	animation: slide-up 1.25s ease;
+}
+
+@keyframes slide-up {
+	from {
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+	to {
+		-webkit-transform: translateY(-100%);
+		-moz-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+}
+
+@-webkit-keyframes slide-up {
+	from {
+		-webkit-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+	to {
+		-webkit-transform: translateY(100%);
+		transform: translateY(-100%);
+	}
+}
+
+@-moz-keyframes slide-up {
+	from {
+		-moz-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+	to {
+		-moz-transform: translateY(100%);
+		transform: translateY(-100%);
 	}
 }
 

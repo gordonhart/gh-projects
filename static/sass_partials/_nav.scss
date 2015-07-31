@@ -72,10 +72,7 @@ a.nav-tab {
 		} /* do nothing on hover for selected tab */
 	}
 
-	transition: 0.20s;
-	-webkit-transition: 0.20s;
-	-moz-transition: 0.20s;
-
+	@include transition(0.20s);
 	&:hover {
 		color: $white;
 
@@ -104,10 +101,7 @@ a.nav-title {
 	text-decoration: none;
 	font-size: 2rem;
 
-	transition: 0.20s;
-	-webkit-transition: 0.20s;
-	-moz-transition: 0.20s;
-
+	@include transition(0.20s);
 	&:hover {
 		font-size: 2.2rem;
 		color: $white;

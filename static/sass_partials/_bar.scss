@@ -25,10 +25,7 @@ $bar-red: #db524b;
 	color: $gray;
 	background: rgba($light, 0.5);
 
-	transition: 0.5s;
-	-webkit-transition: 0.5s;
-	-moz-transition: 0.5s;
-
+	@include transition(0.5s);
 	&:active {
 		height: auto; /* smooth transition doesn't work for auto height... */
 	}

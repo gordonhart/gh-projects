@@ -142,18 +142,19 @@ a.nav-title {
   position: relative;
   width: 60%;
   height: 2rem;
+  cursor: pointer;
   padding: 0;
   margin-bottom: 1rem;
   overflow: hidden;
   color: #DDDDDD;
   background: rgba(248, 248, 248, 0.5);
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  transition: 0.5s; }
-  .lang-wrapper:active {
-    height: auto;
-    /* smooth transition doesn't work for auto height... */ }
+  /*
+  	@include transition(0.5s);
+  	&:active {
+  		height: auto;
+  	} */ }
+  .lang-wrapper.display {
+    height: auto !important; }
 
 .lang-text {
   padding: 1rem 0;

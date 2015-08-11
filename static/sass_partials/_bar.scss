@@ -16,6 +16,7 @@ $bar-red: #db524b;
 
 	width: 60%;
 	height: $bar-height;
+	cursor: pointer;
 
 	padding: 0;
 	margin-bottom: 1rem;
@@ -25,10 +26,14 @@ $bar-red: #db524b;
 	color: $gray;
 	background: rgba($light, 0.5);
 
+	&.display {
+		height: auto !important;
+	}
+/*
 	@include transition(0.5s);
 	&:active {
-		height: auto; /* smooth transition doesn't work for auto height... */
-	}
+		height: auto;
+	} */
 }
 
 .lang-text {

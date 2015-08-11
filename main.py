@@ -44,7 +44,8 @@ def landing_page():
 @app.route('/about')
 def about(): 
 	fromTo = getLocs(1)
-	return render_template('about.html', locs=fromTo, active='about')
+	extra_scripts = [ '/static/js/language_bar.js' ]
+	return render_template('about.html', locs=fromTo, active='about', scripts=extra_scripts)
 
 
 @app.route('/projects')

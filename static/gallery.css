@@ -6,6 +6,7 @@ Order of the imports in this file is VERY important. Do not change without a rea
 */
 /* COMMONLY USED MIXINS */
 /* COLORS */
+/* $red: #720000; old red */
 /* FONTS */
 @font-face {
   font-family: "Rad-Light";
@@ -57,7 +58,7 @@ footer {
   display: block;
   text-align: center;
   color: #222222;
-  background: #720000;
+  background: #600000;
   bottom: 0;
   left: -10px;
   /* not ideal, to compensate for auto padding */
@@ -183,18 +184,19 @@ a.nav-title {
   position: relative;
   width: 60%;
   height: 2rem;
+  cursor: pointer;
   padding: 0;
   margin-bottom: 1rem;
   overflow: hidden;
   color: #DDDDDD;
   background: rgba(248, 248, 248, 0.5);
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  transition: 0.5s; }
-  .lang-wrapper:active {
-    height: auto;
-    /* smooth transition doesn't work for auto height... */ }
+  /*
+  	@include transition(0.5s);
+  	&:active {
+  		height: auto;
+  	} */ }
+  .lang-wrapper.display {
+    height: auto !important; }
 
 .lang-text {
   padding: 1rem 0;
@@ -314,14 +316,12 @@ a.regular {
   cursor: default;
   opacity: 0;
   /* will be overridden when .transition-in is applied */
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s; }
-  #title-text:hover {
-    height: calc(100% - 70px);
-    background: rgba(34, 34, 34, 0.75);
-    color: #F8F8F8; }
+  /*	@include transition(1s);
+  	&:hover {
+  		height: calc(100% - 70px);
+  		background: rgba($black, 0.75);
+  		color: $light;
+  	} */ }
 
 #content-section {
   /* static block same style as title-text but with no hover animation */
@@ -377,7 +377,7 @@ p.note {
 p.codeblock {
   color: #FFFFFF;
   width: 50%;
-  background: rgba(114, 0, 0, 0.25);
+  background: rgba(96, 0, 0, 0.25);
   font-family: "Mono";
   padding: 1rem; }
 
@@ -400,7 +400,7 @@ h3.title-bottom {
 span.codeblock {
   color: #FFFFFF;
   width: 100%;
-  background: rgba(114, 0, 0, 0.25);
+  background: rgba(96, 0, 0, 0.25);
   font-family: "Mono";
   padding: 5px; }
 
@@ -431,7 +431,7 @@ img.icon {
     opacity: 1; }
 
 div.crumbblock {
-  background-color: rgba(114, 0, 0, 0.25);
+  background-color: rgba(96, 0, 0, 0.25);
   display: block;
   padding: 0.5rem 0; }
 
@@ -465,6 +465,16 @@ a.portfolio-img {
   a.portfolio-img:hover {
     background: rgba(34, 34, 34, 0.5);
     color: #f8f8f8; }
+  a.portfolio-img.disabled {
+    /* disabled styling for projects that haven't been written about yet */
+    cursor: default;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s; }
+    a.portfolio-img.disabled:hover {
+      background: url("/static/images/coming_soon.png");
+      background-size: cover; }
 
 /* KEYFRAMES */
 @keyframes transition-in {
@@ -600,13 +610,13 @@ button.gallery-welcome-button {
   margin-right: auto;
   display: block;
   background: #DDDDDD;
-  color: #720000;
+  color: #600000;
   font-family: "Rad-SemiBold";
   font-size: 2rem;
   width: 300px;
   height: 100px;
   border-radius: 25px;
-  border: 2.5px solid #720000;
+  border: 2.5px solid #600000;
   cursor: pointer;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
@@ -640,6 +650,12 @@ img.gallery-img.gallery-side-el {
   border-radius: 0.2rem; }
 
 img.gallery-full-img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: inline-block;
   cursor: pointer;
   margin: auto;
@@ -707,7 +723,7 @@ a.gallery-nav-current {
   font-size: 12px;
   margin: 0 5px;
   padding: 4px 2px 0 2px;
-  background: rgba(114, 0, 0, 0.25); }
+  background: rgba(96, 0, 0, 0.25); }
 
 h5.gallery-side-el {
   margin-top: 1rem;

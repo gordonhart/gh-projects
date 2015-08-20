@@ -3,6 +3,7 @@ Order of the imports in this file is VERY important. Do not change without a rea
 */
 /* COMMONLY USED MIXINS */
 /* COLORS */
+/* $red: #720000; old red */
 /* FONTS */
 @font-face {
   font-family: "Rad-Light";
@@ -60,7 +61,7 @@ main {
   position: fixed;
   line-height: 60px;
   font-size: 30px;
-  background: #720000;
+  background: #600000;
   color: #F8F8F8; }
 
 /*# sourceMappingURL=mobile.css.map */

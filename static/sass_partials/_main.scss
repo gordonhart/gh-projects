@@ -263,7 +263,7 @@ a.portfolio-img {
 
 	background: rgba($black, 0.0);
 	color: rgba($light, 0.0);
-
+ 
 	text-decoration: none;
 	font-family: "Mono-Bold";
 	font-size: 2rem;
@@ -274,8 +274,18 @@ a.portfolio-img {
 	@include transition(0.5s);
 	&:hover {
 		background: rgba($black, 0.5);
-		color: rgba($light, 1);
+		color: rgba($light, 1); 
 	}
+
+	&.disabled { /* disabled styling for projects that haven't been written about yet */
+		cursor: default;
+
+		@include transition(0.5s);
+		&:hover {
+			background:  url("/static/images/coming_soon.png");
+			background-size: cover;
+		}
+	} 
 }
 
 /* KEYFRAMES */

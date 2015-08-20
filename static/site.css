@@ -274,14 +274,12 @@ a.regular {
   cursor: default;
   opacity: 0;
   /* will be overridden when .transition-in is applied */
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  transition: 1s; }
-  #title-text:hover {
-    height: calc(100% - 70px);
-    background: rgba(34, 34, 34, 0.75);
-    color: #F8F8F8; }
+  /*	@include transition(1s);
+  	&:hover {
+  		height: calc(100% - 70px);
+  		background: rgba($black, 0.75);
+  		color: $light;
+  	} */ }
 
 #content-section {
   /* static block same style as title-text but with no hover animation */

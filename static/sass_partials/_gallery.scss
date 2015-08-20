@@ -205,6 +205,8 @@ img.gallery-img.gallery-side-el {
 }
 
 img.gallery-full-img {
+	@include no_highlight;
+	
 	display: inline-block;
 	cursor: pointer;
 

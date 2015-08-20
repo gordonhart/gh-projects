@@ -104,12 +104,12 @@ a.regular {
 
 	opacity: 0; /* will be overridden when .transition-in is applied */
 
-	@include transition(1s);
+/*	@include transition(1s);
 	&:hover {
 		height: calc(100% - 70px);
 		background: rgba($black, 0.75);
 		color: $light;
-	} 
+	} */
 }
 
 #content-section { /* static block same style as title-text but with no hover animation */

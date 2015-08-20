@@ -7,7 +7,7 @@
   <p class="blurb">Pictures, write-ups, and videos of some of the projects that I've spent time on recently.</p>
   <br />
 
-  {{ project_image('/static/images/projects/opentrons.jpg', '#', 'OpenTrons', 'Details of the work done during my time at the biotech laboratory automation startup OpenTrons Labworks.') }}
+  {{ project_image('/static/images/projects/opentrons.jpg', '#', 'OpenTrons', 'Details of the work done during my time at the biotech laboratory automation startup OpenTrons Labworks.', 'off') }}
 
   {{ project_image('/static/images/projects/machineWriting.JPG', 'http://gordonhart.co/machine-writing/', 'Machine Writing', 'A collection of posts detailing the process of teaching my CNC machine to write.') }}
 
@@ -27,9 +27,9 @@
 {% endblock %}
 
 
-{% macro project_image(imgURL, link, name, blurb) %}
+{% macro project_image(imgURL, link, name, blurb, on) %}
 <div class="portfolio-img" style="background: url('{{ imgURL }}');background-size:cover;background-position:center;">
-  <a class="portfolio-img" href="{{ link }}">{{ name }}</a>
+  <a class="portfolio-img" {% if on is defined %} disabled {% endif %} href="{{ link }}">{{ name }}</a>
 </div>
 <p class="project-blurb">{{ blurb }}</p>
 {% endmacro %}

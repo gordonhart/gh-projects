@@ -1,8 +1,8 @@
 <!-- attempt at background image animation-->
 {% macro slide(fromLoc, toLoc) %}
 
-{% set startLoc = -((fromLoc*50) + 50) %}
-{% set endLoc = -((toLoc*50) + 50) %}
+{% set startLoc = -((fromLoc*100) + 100) %}
+{% set endLoc = -((toLoc*100) + 100) %}
 <style>
 #bg {
 	width: 100%;
@@ -18,11 +18,11 @@
 #bg:before {
 	content: "";
 	z-index: -1;
-	background: url("/static/images/cubefield_v8.jpg");
+	background: url("/static/images/cubefield_v9.jpg");
 	background-size: cover;
 
 	position: absolute;
-	width: calc(100% + 250px);
+	width: calc(100% + 500px);
 	height: 100%;
 
 	animation: slide-background 2s ease;

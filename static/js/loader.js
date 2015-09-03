@@ -7,8 +7,8 @@ window.onload = function(){
 	block in and override its opacity to make it visible.
 	*/
 
-	var title = document.getElementById("title-text");
-	var block = document.getElementById("content-section");
+	var title = document.getElementById("title-text"); // title screen (landing)
+	var block = document.getElementById("content-section"); // regular page
 
 	if(title){ // only add class if the element exists
 		title.classList.add("transition-in");
@@ -18,9 +18,9 @@ window.onload = function(){
 }
 
 function mobile_redirect() { /* used to be held in "mobile_redirect.js" */
-	console.log(window.innerWidth);
+//	console.log(window.innerWidth);
 
 	if (window.innerWidth <= 1050) {
-		window.location = "/mobile";
+		window.location = "/mobile"; // redirect to the temporary mobile page if resolution is too small
 	}
 }

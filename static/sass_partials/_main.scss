@@ -19,7 +19,7 @@ main {
 	width: 100%;
 	min-width: 1050px;
 	
-	height: calc(100% - 70px); /* this works !!!!! */
+	height: calc(100% - #{$navheight});
 
 	margin: 0;
 	padding: 0;
@@ -106,7 +106,7 @@ a.regular {
 
 /*	@include transition(1s);
 	&:hover {
-		height: calc(100% - 70px);
+		height: calc(100% - #{$navheight});
 		background: rgba($black, 0.75);
 		color: $light;
 	} */
@@ -117,7 +117,7 @@ a.regular {
 
 	width: 75%;
 	min-width: 800px;
-	height: calc(100% - 70px); /* this works !!!!! */
+	height: calc(100% - #{$navheight});
 
 	position: absolute; /* this block ensures that it is always centered */
 	left: 0;

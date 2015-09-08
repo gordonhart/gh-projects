@@ -19,10 +19,9 @@ nav {
 footer {
 	@include auto_margin;
 	@include uniform-padding(10px);
+	@include no_stretch;
 
-/*	@include sticky-bottom-container; */
-
-	height: 50px;
+	height: $navheight;
 	width: 100%;
 	position: fixed;
 	
@@ -33,17 +32,9 @@ footer {
 	z-index: 999;
 
 	bottom: 0;
-	left: -10px; /* not ideal, to compensate for auto padding */
+	left: 0;
 }
-/*
-#sticky-element {
-	width:100%;
-	height:auto;
 
-	position: fixed;
-	bottom: 0;
-}
-*/
 a.nav-tab {
 	@include nav-el;
 	@include uniform-padding(10px);
@@ -57,17 +48,24 @@ a.nav-tab {
 	border-right: 1px solid $gray;
 
 	width: 75px;
-	height: 20px;
+	height: 25px;
+
+	-webkit-transform: translateY(5px);
+	-moz-transform: translateY(5px);
+	transform: translateY(5px);
 
 	&.current {
-		height: 15px; 
+		-webkit-transform: translateY(10px);
+		-moz-transform: translateY(10px);
+		transform: translateY(10px);
+
 		background: rgba($black, 0.25);
 
-/*		animation: button-collapse 0.35s;
-		transition-timing-function: ease-in; */
+		&:hover {
+			-webkit-transform: translateY(10px);
+			-moz-transform: translateY(10px);
+			transform: translateY(10px);
 
-		&:hover { 
-			height: 15px;
 			background: rgba($black, 0.25);
 		} /* do nothing on hover for selected tab */
 	}
@@ -76,13 +74,19 @@ a.nav-tab {
 	&:hover {
 		color: $white;
 
-		height: 25px;
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		transform: translateY(0px);
+
 		background: rgba($light, 0.20); 
 		cursor: pointer;
 	}
 
 	&:active { /* simulate the collapse when the button is clicked */
-		height: 15px; 
+		-webkit-transform: translateY(10px);
+		-moz-transform: translateY(10px);
+		transform: translateY(10px);
+
 		background: rgba($black, 0.25);
 	}
 }
@@ -103,7 +107,11 @@ a.nav-title {
 
 	@include transition(0.20s);
 	&:hover {
-		font-size: 2.2rem;
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		transform: scale(1.1);
+
+/*		font-size: 2.2rem; */
 		color: $white;
 		cursor: pointer;
 	}

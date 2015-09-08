@@ -5,3 +5,6 @@ heroku_notes.txt
 
 static/*.css.map
 *.css.map
+
+.sass-cache
+static/.sass-cache

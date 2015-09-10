@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template
+from flask import Flask, session, request, jsonify, render_template
 
 import json
 
@@ -100,6 +100,38 @@ def gallery(gallery='full'):
 @app.route('/mobile')
 def mobile_redirect():
 	return render_template('subpages/mobile.html')
+
+
+# NOTEPAD MODULE ============================================================================
+
+@app.route('/notepad')
+def notepad():
+	fromTo = getLocs(0)
+	extra_scripts = [ # extra scripts to be used with the gallery
+		'/static/js/notepad.js', 
+		'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'
+	]
+
+	notefile = open('static/notes.txt', 'r')
+	notes = notefile.read()
+	notefile.close()
+
+	return render_template('subpages/notepad.html', locs=fromTo, scripts=extra_scripts, notes=notes)
+
+
+@app.route('/notepad/save')
+def notepad_save():
+	'''
+	Save changes to the text file that holds all of the notes
+	'''
+	input_text = request.args.get('text')
+
+	notefile = open('static/notes.txt', 'w')
+	notefile.write(input_text)
+	notefile.close()
+
+	notepad_text = 'test'
+	return jsonify(notes=str(notepad_text))
 
 
 # RUN =======================================================================================

@@ -8,3 +8,6 @@ static/*.css.map
 
 .sass-cache
 static/.sass-cache
+
+static/notes.txt
+

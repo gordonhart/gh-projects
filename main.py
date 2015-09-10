@@ -112,7 +112,7 @@ def notepad():
 		'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'
 	]
 
-	notefile = open('static/notes.txt', 'r')
+	notefile = open('static/notes.txt', 'w+')
 	notes = notefile.read()
 	notefile.close()
 

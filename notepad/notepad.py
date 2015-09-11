@@ -11,6 +11,7 @@ class Notepad:
 	access_key = 'AKIAIHVHVQTXIOVI6V5A'
 	secret_key = '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'
 
+
 	def __init__(self):
 		self.connection = S3Connection(Notepad.access_key, Notepad.secret_key)
 		self.bucket = self.connection.get_bucket('gh-testbucket')

@@ -1,6 +1,8 @@
 from flask import Flask, session, request, jsonify, render_template
+from flask.ext.cache import Cache
 
 import json
+from notepad.notepad import Notepad
 
 
 # SETUP ======================================================================================
@@ -13,6 +15,9 @@ app.jinja_env.lstrip_blocks = True # strip the whitespace from jinja template li
 app.jinja_env.trim_blocks = True
 
 app.secret_key = 'gh-projects' # decryption key for session variable
+
+cache = Cache(app, config={'CACHE_TYPE': 'simple'}) # initialize cache to store objects
+
 
 def getLocs(index): # page background scrolling using session variables
 	try:
@@ -94,7 +99,13 @@ def gallery(gallery='full'):
 	]
 	
 	crumbs = ['portfolio', gallery]
-	return render_template('subpages/gallery.html', locs=fromTo, active='portfolio', gallery=gallery_dict, css="gallery.css", crumblist=crumbs, scripts=extra_scripts)
+	return render_template('subpages/gallery.html', 
+		locs=fromTo, 
+		active='portfolio', 
+		gallery=gallery_dict, 
+		css="gallery.css", 
+		crumblist=crumbs, 
+		scripts=extra_scripts)
 
 
 @app.route('/mobile')
@@ -112,9 +123,10 @@ def notepad():
 		'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'
 	]
 
-	notefile = open('static/notes.txt', 'w+')
-	notes = notefile.read()
-	notefile.close()
+	notepad = Notepad()
+	cache.set('notepad', notepad)
+
+	notes = notepad.notes
 
 	return render_template('subpages/notepad.html', locs=fromTo, scripts=extra_scripts, notes=notes)
 
@@ -126,15 +138,17 @@ def notepad_save():
 	'''
 	input_text = request.args.get('text')
 
-	notefile = open('static/notes.txt', 'w')
-	notefile.write(input_text)
-	notefile.close()
+	notepad = cache.get('notepad')
+	notepad_text = notepad.set_notes(input_text)
 
-	notepad_text = 'test'
 	return jsonify(notes=str(notepad_text))
 
 
 # RUN =======================================================================================
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(
+		host = '127.0.0.1',
+		port = 5000,
+		debug = True
+	)

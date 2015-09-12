@@ -1,7 +1,9 @@
 from flask import Flask, session, request, jsonify, render_template
 from flask.ext.cache import Cache
 
+import os
 import json
+
 from notepad.notepad import Notepad
 
 
@@ -85,7 +87,8 @@ def whyRobots():
 def gallery(gallery='full'):
 	fromTo = getLocs(3)
 
-	filename = 'static/gallery/%s.json' % gallery # read gallery information in from JSON file
+	here = os.path.dirname(os.path.abspath(__file__)) # get current directory location
+	filename = '%s/static/gallery/%s.json' % (here, gallery) # read gallery information in from JSON file
 
 	gallery_file = open(filename, 'r') # open and read from JSON file
 	gallery_text = gallery_file.read()

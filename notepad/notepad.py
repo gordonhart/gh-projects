@@ -18,7 +18,7 @@ class Notepad:
 
 		self.notes_key = self.bucket.get_key('notepad.txt')
 		self.notes = self.notes_key.get_contents_as_string()
-		print self.notes
+#		print self.notes
 
 
 	def set_notes(self, notes):
@@ -26,7 +26,7 @@ class Notepad:
 		Update the notes in the S3 bucket.
 		'''
 		self.notes = notes
-		print 'notes set to: %s' % self.notes
+#		print 'notes set to: %s' % self.notes
 
 		self.notes_key.set_contents_from_string(self.notes) # put new notes in bucket
 

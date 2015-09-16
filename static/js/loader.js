@@ -10,10 +10,17 @@ window.onload = function(){
 	var title = document.getElementById("title-text"); // title screen (landing)
 	var block = document.getElementById("content-section"); // regular page
 
+	var loader = document.getElementById("loader");
+
 	if(title){ // only add class if the element exists
-		title.classList.add("transition-in");
+		title.classList.add("fade-in");
 	} else if(block) {
-		block.classList.add("transition-in");
+		block.classList.add("fade-in");
+//		block.classList.add("slide-in");
+	}
+
+	if(loader) { // hide the loader only if it exists
+		loader.classList.add("hidden");
 	}
 }
 

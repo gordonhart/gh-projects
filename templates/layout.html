@@ -45,6 +45,11 @@ Traverse at your own risk.
 
     </div>
 
+    {# If the page uses the default CSS, it is a default page, and thus needs the default loader #}
+    {% if css == "site.css" %}
+    <div id="loader"></div>
+    {% endif %}
+
     <!-- NAV BAR -->
     <footer id="foot">
 

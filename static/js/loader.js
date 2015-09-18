@@ -20,7 +20,7 @@ window.onload = function(){
 	}
 
 	if(loader) { // hide the loader only if it exists
-		loader.classList.add("hidden");
+		loader.classList.remove("oscillate");
 	}
 }
 

@@ -130,25 +130,11 @@ a.regular {
 	opacity: 0; /* will be overridden when .transition-in is applied */
 }
 
-.slide-in { /* fade-in animation for main display blocks */
-/*	opacity: 1 !important; */
-
-	animation: slide-in 3.5s;
-	-webkit-animation: slide-in 3.5s;
-	-moz-animation: slide-in 3.5s;
-}
-
-.fade-in { /* fade-in animation for main display blocks */
-	opacity: 1 !important;
-
-	animation: fade-in 1.5s;
-	-webkit-animation: fade-in 1.5s;
-	-moz-animation: fade-in 1.5s;
-}
-
 #loader {
 	height: 5px;
 	width: 10%;
+
+	display: none;
 
 	background-color: $gray;
 	border-radius: 5px 5px 0 0;
@@ -160,10 +146,6 @@ a.regular {
 
 	margin: 0;
 	padding: 0;
-
-	animation: oscillate 5s infinite ease;
-	-webkit-animation: oscillate 5s infinite ease;
-	-moz-animation: oscillate 5s infinite ease;	
 }
 
 /* CLASS BLOCKS */
@@ -316,11 +298,15 @@ a.portfolio-img {
 	} 
 }
 
-.hidden {
-	display: none;
-}
-
 /* KEYFRAMES */
+
+.slide-in { /* fade-in animation for main display blocks */
+/*	opacity: 1 !important; */
+
+	animation: slide-in 3.5s;
+	-webkit-animation: slide-in 3.5s;
+	-moz-animation: slide-in 3.5s;
+}
 
 @keyframes slide-in {
 	from { transform: translateY(100%) translateY($navheight); }
@@ -338,6 +324,14 @@ a.portfolio-img {
 }
 
 
+.fade-in { /* fade-in animation for main display blocks */
+	opacity: 1 !important;
+
+	animation: fade-in 1.5s;
+	-webkit-animation: fade-in 1.5s;
+	-moz-animation: fade-in 1.5s;
+}
+
 @keyframes fade-in {
 	from { opacity: 0; }
 	to { opacity: 1; }
@@ -353,6 +347,14 @@ a.portfolio-img {
 	to { opacity: 1; }
 }
 
+
+.oscillate {
+	display: block !important;
+
+	animation: oscillate 4s infinite ease;
+	-webkit-animation: oscillate 4s infinite ease;
+	-moz-animation: oscillate 4s infinite ease;	
+}
 
 @keyframes oscillate {
 	0% { transform: translateX(0); }
